@@ -39,18 +39,18 @@ public class Burglar extends Actor
           setImage(ladron);
         }
           
-        if(Greenfoot.isKeyDown("down")){
-         setLocation(getX(),getY()+3);
-        }
+         if(Greenfoot.isKeyDown("down")){
+          setLocation(getX(),getY()+3);
+         }
          
-        if(Greenfoot.isKeyDown("right")){
-          setLocation(getX()+3,getY());
-        }
+          if(Greenfoot.isKeyDown("right")){
+           setLocation(getX()+3,getY());
+          }
           
-        if(Greenfoot.isKeyDown("left")){
+           if(Greenfoot.isKeyDown("left")){
             
-          setLocation(getX()-3,getY());
-        }
+            setLocation(getX()-3,getY());
+           }
     }
     
     public void validaciones()
@@ -58,21 +58,21 @@ public class Burglar extends Actor
         GreenfootImage miImagen=super.getImage();
         if(this.isTouching(Lines.class)){
            
-        if(Greenfoot.isKeyDown("up")) {
+         if(Greenfoot.isKeyDown("up")) {
           setLocation(getX(),getY()+3);
-        }
+         }
           
-        if(Greenfoot.isKeyDown("down")){
-         setLocation(getX(),getY()-3);
-        }
+          if(Greenfoot.isKeyDown("down")){
+           setLocation(getX(),getY()-3);
+          }
          
-        if(Greenfoot.isKeyDown("right")){
-          setLocation(getX()-3,getY());
-        }
+          if(Greenfoot.isKeyDown("right")){
+            setLocation(getX()-3,getY());
+           }
           
-        if(Greenfoot.isKeyDown("left")){
-          setLocation(getX()+3,getY());
-        }
+            if(Greenfoot.isKeyDown("left")){
+              setLocation(getX()+3,getY());
+            }
         }
         
         if(getX()-miImagen.getWidth()/2<=0){

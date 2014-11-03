@@ -11,16 +11,11 @@ public class Lines extends Actor
     public Lines(int dir)
     {
         this.turn(dir);
-    }
-    /**
-     * Act - do whatever the Lines wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-        
-    }    
-    
+        GreenfootImage imagen=new GreenfootImage("brick.png");
+        imagen.scale(imagen.getWidth()*4,imagen.getHeight());
+        imagen.setColor(java.awt.Color.blue);
+        imagen.fill();
+        setImage(imagen);
+    } 
     
 }
