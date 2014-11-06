@@ -8,13 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Burglar extends Actor
 {
+    
     private GreenfootImage ladron;
+    private int puntos;
+    
     public Burglar()
     {
         ladron=new GreenfootImage("ladron.png"); 
-        ladron.scale( ladron.getWidth()/10,ladron.getHeight()/10);
+        ladron.scale( ladron.getWidth()/12,ladron.getHeight()/12);
         ladron.mirrorHorizontally();
         setImage(ladron);
+        puntos=0;
+
     }
     /**
      * Act - do whatever the Burglar wants to do. This method is called whenever
@@ -24,8 +29,34 @@ public class Burglar extends Actor
     {
         // Add your action code here.
         
-        move();
-        validaciones();
+        move(); 
+        validaciones(); 
+        
+        if(isTouching(Cincuenta.class)){
+         ((BurglarWorld)(getWorld())).getCincuenta().acumulaPuntos();   
+        
+          removeTouching(Cincuenta.class);
+          
+          
+        }
+        
+        
+        if(isTouching(Doscientos.class)){
+          ((BurglarWorld)(getWorld())).getDoscientos().acumulaPuntos();
+        
+          removeTouching(Doscientos.class);
+          
+         
+        }
+        
+        
+        if(isTouching(Quinientos.class)){
+          ((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
+          
+          removeTouching(Quinientos.class);
+          
+          
+        }
         
     }   
     
@@ -33,46 +64,42 @@ public class Burglar extends Actor
     {
         if(Greenfoot.isKeyDown("up")) {
           setLocation(getX(),getY()-3);
-          GreenfootImage im=new GreenfootImage("imagen1.png");
-          ladron=im;
-          
-          setImage(ladron);
         }
           
-         if(Greenfoot.isKeyDown("down")){
-          setLocation(getX(),getY()+3);
-         }
+        if(Greenfoot.isKeyDown("down")){
+         setLocation(getX(),getY()+3);
+        }
          
-          if(Greenfoot.isKeyDown("right")){
-           setLocation(getX()+3,getY());
-          }
+        if(Greenfoot.isKeyDown("right")){
+          setLocation(getX()+3,getY());
+        }
           
-           if(Greenfoot.isKeyDown("left")){
-            
-            setLocation(getX()-3,getY());
-           }
+        if(Greenfoot.isKeyDown("left")){
+          setLocation(getX()-3,getY());
+        }
     }
     
     public void validaciones()
     {
         GreenfootImage miImagen=super.getImage();
+        
         if(this.isTouching(Lines.class)){
            
-         if(Greenfoot.isKeyDown("up")) {
+        if(Greenfoot.isKeyDown("up")){ 
           setLocation(getX(),getY()+3);
-         }
+        }
           
-          if(Greenfoot.isKeyDown("down")){
-           setLocation(getX(),getY()-3);
-          }
+        if(Greenfoot.isKeyDown("down")){
+         setLocation(getX(),getY()-3);
+        }
          
-          if(Greenfoot.isKeyDown("right")){
-            setLocation(getX()-3,getY());
-           }
+        if(Greenfoot.isKeyDown("right")){
+          setLocation(getX()-3,getY());
+        }
           
-            if(Greenfoot.isKeyDown("left")){
-              setLocation(getX()+3,getY());
-            }
+        if(Greenfoot.isKeyDown("left")){
+          setLocation(getX()+3,getY());
+        }
         }
         
         if(getX()-miImagen.getWidth()/2<=0){
@@ -83,5 +110,15 @@ public class Burglar extends Actor
               this.setLocation(getX(),getY()-3);
             }
               
+    }
+    
+    public void setPuntos(int unosPuntos)
+    {
+        puntos=unosPuntos;
+    }
+    
+    public int getPuntos()
+    {
+        return puntos;
     }
 }
