@@ -10,6 +10,12 @@ public class BurglarWorld extends World
 {
     private Burglar burglar;
     private Counter mensajeVidas, mensajePuntos;
+    private SimpleTimer reloj;
+    private Policeman police;
+    private Cincuenta cincuenta;
+    private Doscientos doscientos;
+    private Quinientos quinientos;
+    
     /**
      * Constructor for objects of class BurglarWorld.
      * 
@@ -18,15 +24,16 @@ public class BurglarWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
-        
+        reloj=new SimpleTimer();
+        this.setPaintOrder(Burglar.class,Policeman.class);
         prepare();
-        
-        mensajeVidas=new Counter("Vidas: ");
+        mensajeVidas=new Counter("Vidas: "); 
         mensajeVidas.setValue(3);
-        addObject(mensajeVidas,55,20);
-        mensajePuntos=new Counter("Puntos: ");
-        mensajePuntos.setValue(0); 
-        addObject(mensajePuntos,55,55);
+        addObject(mensajeVidas,52,20);
+        mensajePuntos=new Counter("Dinero: ");
+        mensajePuntos.setValue(0);
+        addObject(mensajePuntos,58,55);
+        
     }
 
     /**
@@ -39,6 +46,21 @@ public class BurglarWorld extends World
 
         burglar = new Burglar();//agrega al ladron
         addObject(burglar, 954, 172);
+
+        police = new Policeman();
+        addObject(police,454,160);
+
+        cincuenta=new Cincuenta();
+        addObject(cincuenta,500,200);
+
+        doscientos=new Doscientos();
+        addObject(doscientos,300,50);
+        
+    }
+    
+    public void act()
+    {
+       mensajePuntos.setValue(burglar.getPuntos());
     }
     
      public void dibujaEscenario()
@@ -90,4 +112,29 @@ public class BurglarWorld extends World
         addObject(new Lines(0), 60, 95);
     }
    
+    
+    public SimpleTimer getReloj()
+    {
+        return reloj;
+    }
+    
+    public Burglar getBurglar()
+    {
+        return burglar;
+    }
+    
+    public Cincuenta getCincuenta()
+    {
+        return cincuenta;
+    }
+    
+    public Doscientos getDoscientos()
+    {
+        return doscientos; 
+    }
+    
+    public Quinientos getQuinientos()
+    {
+        return quinientos;
+    }
 }
