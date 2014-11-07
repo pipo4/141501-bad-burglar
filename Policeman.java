@@ -23,25 +23,17 @@ public class Policeman extends Enemy
         // Add your action code here.
        reloj=((BurglarWorld)(getWorld())).getReloj();
        
-        if(getX()<=745){
+       if(getX()<=800){
          
          if(reloj.millisElapsed()>=500){ 
               setLocation(getX()+1,getY());
               
             }  
-           // move(); 
+            move(); 
+           
         }
           
-         /* if(this.isTouching(Burglar.class)){  
-              reloj.mark();
-            ((BurglarWorld)(getWorld())).setValor(-1);  
-            reloj.mark();
-        }*/
-       
-       /* if(getX()>=745){
-             police.mirrorHorizontally();
-              setImage(police); 
-        }*/
+         quitaPuntos();
     }    
     
     public void move()
@@ -90,4 +82,19 @@ public class Policeman extends Enemy
         
        
     } 
+    
+     public void quitaPuntos()
+    {
+       // if(isTouching(Burglar.class)){
+           if( intersects(((BurglarWorld)(getWorld())).getBurglar())){ 
+               int puntos=((BurglarWorld)(getWorld())).getBurglar().getPuntos();
+            if(((BurglarWorld)(getWorld())).getMensajePuntos().getValue()>0) { 
+               // if(((BurglarWorld)(getWorld())).getBurglar().getPuntos()>49){
+                puntos=puntos-1;
+               // puntos=puntos-50;
+                super.quitaPuntos(puntos);
+            }
+        }
+    }
 }
+
