@@ -12,6 +12,7 @@ public class BurglarWorld extends World
     private Counter mensajeVidas, mensajePuntos;
     private SimpleTimer reloj;
     private Policeman police;
+    private Patrol patrulla;
     private Cincuenta cincuenta;
     private Doscientos doscientos;
     private Quinientos quinientos;
@@ -52,10 +53,19 @@ public class BurglarWorld extends World
 
         cincuenta=new Cincuenta();
         addObject(cincuenta,500,200);
+        /*Cincuenta cincuenta2=new Cincuenta();
+        addObject(cincuenta2,250,460);*/
 
         doscientos=new Doscientos();
         addObject(doscientos,300,50);
-        
+        Doscientos doscientos2=new Doscientos();
+        addObject(doscientos2,830,500);
+
+        patrulla=new Patrol();
+        addObject(patrulla,560,400);
+
+        quinientos = new Quinientos();
+        addObject(quinientos, 836, 66);
     }
     
     public void act()
@@ -136,5 +146,10 @@ public class BurglarWorld extends World
     public Quinientos getQuinientos()
     {
         return quinientos;
+    }
+    
+    public Counter getMensajePuntos()
+    {
+        return mensajePuntos;
     }
 }

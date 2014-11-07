@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Burglar extends Actor
 {
-    
     private GreenfootImage ladron;
     private int puntos;
+    private int vidas;
     
     public Burglar()
     {
@@ -19,6 +19,7 @@ public class Burglar extends Actor
         ladron.mirrorHorizontally();
         setImage(ladron);
         puntos=0;
+        vidas=3;
 
     }
     /**
@@ -34,30 +35,19 @@ public class Burglar extends Actor
         
         if(isTouching(Cincuenta.class)){
          ((BurglarWorld)(getWorld())).getCincuenta().acumulaPuntos();   
-        
           removeTouching(Cincuenta.class);
-          
-          
         }
-        
         
         if(isTouching(Doscientos.class)){
           ((BurglarWorld)(getWorld())).getDoscientos().acumulaPuntos();
-        
           removeTouching(Doscientos.class);
-          
-         
         }
-        
         
         if(isTouching(Quinientos.class)){
           ((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
-          
           removeTouching(Quinientos.class);
-          
-          
         }
-        
+       
     }   
     
     public void move()

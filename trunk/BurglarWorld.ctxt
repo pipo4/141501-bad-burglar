@@ -19,4 +19,6 @@ comment7.params=
 comment7.target=Doscientos\ getDoscientos()
 comment8.params=
 comment8.target=Quinientos\ getQuinientos()
-numComments=9
+comment9.params=
+comment9.target=Counter\ getMensajePuntos()
+numComments=10
