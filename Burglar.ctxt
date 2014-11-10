@@ -1,15 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Burglar()
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Burglar.\r\n\ Crea\ la\ imagen\ del\ ladron.\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Burglar\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ En\ el\ m\u00E9todo\ act()\ ,\ se\ mandan\ llamar\ a\ los\ m\u00E9todos\ que\ contiene\ el\ movimiento\ del\ ladron,\ \r\n\ validaciones\ para\ que\ no\ se\ salga\ del\ escenario\ y\ se\ acumulan\ los\ puntos\r\n
 comment2.params=
 comment2.target=void\ move()
+comment2.text=\r\n\ \u00C9ste\ m\u00E9todo\ contiene\ el\ movimiento\ del\ personaje\ (arriba,abajo,izquierda,derecha).\r\n
 comment3.params=
 comment3.target=void\ validaciones()
+comment3.text=\r\n\ Este\ m\u00E9todo\ contiene\ las\ validaciones\ necesarias\ para\ que\ el\ ladr\u00F3n\ no\ pase\ el\ limite\r\n\ del\ laberinto,\ que\ fue\ dibujado\ con\ la\ clase\ Lines\r\n
 comment4.params=unosPuntos
 comment4.target=void\ setPuntos(int)
+comment4.text=\r\n\ Este\ m\u00E9todo\ contiene\ un\ par\u00E1metro\ de\ tipo\ entero,\ el\ cual\ se\ agregar\u00E1\ al\ atributo\ puntos\r\n\ del\ ladr\u00F3n\ e\ ir\ acumul\u00E1ndolos\r\n\ @param\ unosPuntos\ el\ valor\ entero\ de\ los\ puntos\ para\ el\ ladron\r\n
 comment5.params=
 comment5.target=int\ getPuntos()
+comment5.text=\r\n\ Este\ m\u00E9todo\ regresa\ el\ valor\ entero\ de\ los\ puntos\ que\ se\ hayan\ acumulado\r\n\ @return\ puntos\ Los\ puntos\ que\ lleva\ el\ ladr\u00F3n\r\n
 numComments=6

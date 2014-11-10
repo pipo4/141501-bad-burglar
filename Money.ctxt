@@ -1,4 +1,5 @@
 #BlueJ class context
 comment0.params=unValor
 comment0.target=void\ acumulaPuntos(int)
+comment0.text=\r\n\ Este\ metodo\ recibe\ como\ parametro\ un\ entero\ que\ se\ va\ a\ ir\ incrementando\ a\ los\ puntos\ del\ ladron\r\n\ @param\ unValor\ el\ valor\ que\ tenga\ un\ billete\r\n
 numComments=1

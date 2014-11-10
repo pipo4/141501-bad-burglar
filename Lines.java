@@ -1,13 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lines here.
+ * La clase Lines permite dibujar el laberinto del juego con ayuda de una barra.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (a version number or a date)
+ * @version (2014.11.7)
  */
 public class Lines extends Actor
 {
+    /**
+     * Constructor de la clase Lines, recibe una direccion para girar la barra y colocarla
+     * en el escenario
+     * @param  dir direccion en la que se quiere colocar la barra para dibujar el laberinto
+     */
     public Lines(int dir)
     {
         this.turn(dir);
