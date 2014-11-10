@@ -1,13 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Money here.
+ * La clase Money permite crear los billetes de diferentes valores para que despues el ladron acumule puntos.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (a version number or a date)
+ * @version (2014.11.7)
  */
 public class Money extends Actor
 {
+    /**
+     * Este metodo recibe como parametro un entero que se va a ir incrementando a los puntos del ladron
+     * @param unValor el valor que tenga un billete
+     */
     public void acumulaPuntos(int unValor) 
     {
         

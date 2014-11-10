@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Burglar here.
+ * La clase Burglar contiene al personaje principal del juego, un ladrón. En esta clase se crea una
+ * imagen del personaje que va a tener vidas y puntos , asi como movimiento del ladrón en el escenario
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (a version number or a date)
+ * @version (2014.11.7)
  */
 public class Burglar extends Actor
 {
@@ -12,6 +13,10 @@ public class Burglar extends Actor
     private int puntos;
     private int vidas;
     
+    /**
+     * Constructor de la clase Burglar.
+     * Crea la imagen del ladron.
+     */
     public Burglar()
     {
         ladron=new GreenfootImage("ladron.png"); 
@@ -22,9 +27,10 @@ public class Burglar extends Actor
         vidas=3;
 
     }
+    
     /**
-     * Act - do whatever the Burglar wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * En el método act() , se mandan llamar a los métodos que contiene el movimiento del ladron, 
+     * validaciones para que no se salga del escenario y se acumulan los puntos
      */
     public void act() 
     {
@@ -39,7 +45,7 @@ public class Burglar extends Actor
         }
         
         if(isTouching(Doscientos.class)){
-          ((BurglarWorld)(getWorld())).getDoscientos().acumulaPuntos();
+          ((BurglarWorld)(getWorld())).getDoscientos().acumulaPuntos(); 
           removeTouching(Doscientos.class);
         }
         
@@ -50,6 +56,9 @@ public class Burglar extends Actor
        
     }   
     
+    /**
+     * Éste método contiene el movimiento del personaje (arriba,abajo,izquierda,derecha).
+     */
     public void move()
     {
         if(Greenfoot.isKeyDown("up")) {
@@ -69,6 +78,10 @@ public class Burglar extends Actor
         }
     }
     
+    /**
+     * Este método contiene las validaciones necesarias para que el ladrón no pase el limite
+     * del laberinto, que fue dibujado con la clase Lines
+     */
     public void validaciones()
     {
         GreenfootImage miImagen=super.getImage();
@@ -102,11 +115,20 @@ public class Burglar extends Actor
               
     }
     
+    /**
+     * Este método contiene un parámetro de tipo entero, el cual se agregará al atributo puntos
+     * del ladrón e ir acumulándolos
+     * @param unosPuntos el valor entero de los puntos para el ladron
+     */
     public void setPuntos(int unosPuntos)
     {
         puntos=unosPuntos;
     }
     
+    /**
+     * Este método regresa el valor entero de los puntos que se hayan acumulado
+     * @return puntos Los puntos que lleva el ladrón
+     */
     public int getPuntos()
     {
         return puntos;

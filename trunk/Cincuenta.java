@@ -1,14 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Cincuenta here.
+ *La clase Cincuenta es un billete que tiene un valor de cincuenta puntos para el ladron.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (a version number or a date)
+ * @version (2014.11.7)
  */
 public class Cincuenta extends Money
 {
     private int valor;
+    /**
+     * Constructor de la clase Cincuenta 
+     * Se crea la imagen del billete.
+     */
     public Cincuenta()
     {
         GreenfootImage billete50=new GreenfootImage("billete50.jpg");
@@ -19,6 +23,10 @@ public class Cincuenta extends Money
         
     }
      
+    /**
+     * Este metodo acumula los puntos del ladrón según sea el valor del billete
+     * 
+     */
     public void  acumulaPuntos() 
     {
          

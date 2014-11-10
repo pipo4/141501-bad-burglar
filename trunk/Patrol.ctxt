@@ -1,7 +1,14 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Patrol()
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Patrol\r\n\ se\ crea\ la\ imagen\ de\ la\ patrulla\ \r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Patrol\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment1.text=\r\n\ El\ m\u00E9todo\ act()\ manda\ llamar\ a\ los\ m\u00E9todos\ de\ la\ clase\ Patrol\r\n
+comment2.params=
+comment2.target=void\ move()
+comment2.text=\r\n\ El\ m\u00E9todo\ move()\ permite\ realizar\ el\ movimiento\ de\ la\ patrulla\r\n
+comment3.params=
+comment3.target=void\ quitaPuntos()
+comment3.text=\r\n\ El\ m\u00E9todo\ quitaPuntos()\ verifica\ si\ un\ objeto\ de\ la\ clase\ Patrol\ toca\ al\ ladron,\ se\ tendr\u00E1\ que\ quitar\ puntos\r\n
+numComments=4
