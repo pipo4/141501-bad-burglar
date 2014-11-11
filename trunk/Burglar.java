@@ -40,20 +40,20 @@ public class Burglar extends Actor
         validaciones(); 
         
         if(isTouching(Cincuenta.class)){
-         ((BurglarWorld)(getWorld())).getCincuenta().acumulaPuntos();   
-          removeTouching(Cincuenta.class);
+         //((BurglarWorld)(getWorld())).getCincuenta().acumulaPuntos(); 
+          removeTouching(Cincuenta.class); 
         }
         
         if(isTouching(Doscientos.class)){
-          ((BurglarWorld)(getWorld())).getDoscientos().acumulaPuntos(); 
+          //((BurglarWorld)(getWorld())).getDoscientos().acumulaPuntos(); 
           removeTouching(Doscientos.class);
         }
         
         if(isTouching(Quinientos.class)){
-          ((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
+          //((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
           removeTouching(Quinientos.class);
         }
-       
+    
     }   
     
     /**
