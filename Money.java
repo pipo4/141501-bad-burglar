@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Money extends Actor
 {
+   
+    
     /**
      * Este metodo recibe como parametro un entero que se va a ir incrementando a los puntos del ladron
      * @param unValor el valor que tenga un billete

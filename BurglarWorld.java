@@ -57,7 +57,7 @@ public class BurglarWorld extends World
         police = new Policeman();
         addObject(police,655,160);
 
-        cincuenta=new Cincuenta();
+        cincuenta=new Cincuenta(); 
         addObject(cincuenta,50,500);
         /*Cincuenta cincuenta2=new Cincuenta();
         addObject(cincuenta2,250,460);*/
@@ -194,4 +194,6 @@ public class BurglarWorld extends World
     {
         return mensajePuntos;
     }
+    
+    
 }
