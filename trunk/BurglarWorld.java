@@ -1,11 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * La clase BurglarWorld va a contener el escenario del juego y también donde se controlarán los niveles del 
  * juego. Esto incluye creación de personajes u objetos y su movimiento(si es que lo tiene)
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.9)
+ * @version (2014.11.11)
  */
 public class BurglarWorld extends World
 {
@@ -18,10 +17,10 @@ public class BurglarWorld extends World
     private Doscientos doscientos;
     private Quinientos quinientos;
     /** Constante para girar 0 grados el bloque de la clase Lines y ponerlo en el escenario para el laberinto*/
-    public static final int GIRA_0=0;
+    private static final int GIRA_0=0;
     /** Constante para girar 90 grados el bloque de la clase Lines y ponerlo en el escenario para el laberinto*/
-    public static final int GIRA_90=90;
-
+    private static final int GIRA_90=90;
+    private GreenfootSound mision;
 
     
     /**
@@ -41,7 +40,7 @@ public class BurglarWorld extends World
         mensajePuntos=new Counter("Dinero: ");
         mensajePuntos.setValue(0);
         addObject(mensajePuntos,58,55);
-        
+        mision=new GreenfootSound("mision imposible.mp3");
     }
 
     /**
@@ -59,15 +58,12 @@ public class BurglarWorld extends World
 
         cincuenta=new Cincuenta(); 
         addObject(cincuenta,50,500);
-        /*Cincuenta cincuenta2=new Cincuenta();
-        addObject(cincuenta2,250,460);*/
+       
         addObject(new Cincuenta(),500,200);
         
         doscientos=new Doscientos();
         addObject(doscientos,300,50);
-        /*Doscientos doscientos2=new Doscientos();
-        addObject(doscientos2,830,500);*/
-
+        
         patrulla=new Patrol();
         addObject(patrulla,560,400);
 
@@ -82,7 +78,9 @@ public class BurglarWorld extends World
     {
        mensajePuntos.setValue(burglar.getPuntos());
        
-      
+       
+       //mision.playLoop();
+       //mision.stop();
     }
     
     /**
@@ -140,15 +138,7 @@ public class BurglarWorld extends World
         addObject(new Lines(GIRA_0), 60, 95);
     }
    
-    /**
-     * Regresa un objeto de la clase SimpleTimer que puede ser utilzado en otras clases
-     * @return reloj Un objeto de la clase SimpleTimer
-     */
-    public SimpleTimer getReloj()
-    {
-        return reloj;
-    }
-    
+   
     /**
      * Regresa al objeto de la clase Burglar para poder acceder a sus métodos
      * @return burglar  Al ladron (un objeto de la clase Burglar)

@@ -23,17 +23,14 @@ public class Cincuenta extends Money
         
     }
      
-     
     /**
      * Este metodo acumula los puntos del ladrón según sea el valor del billete
      * 
      */
     public void  acumulaPuntos() 
     {
-         
-         int puntos=((BurglarWorld)(getWorld())).getBurglar().getPuntos();
-         puntos=puntos+this.valor;
+          int puntos=((BurglarWorld)(getWorld())).getBurglar().getPuntos();
+         puntos=puntos+this.valor;  
          super.acumulaPuntos(puntos);
-         
     }    
 }

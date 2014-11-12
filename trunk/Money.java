@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Money extends Actor
 {
-   
     
     /**
      * Este metodo recibe como parametro un entero que se va a ir incrementando a los puntos del ladron
@@ -16,7 +15,7 @@ public class Money extends Actor
      */
     public void acumulaPuntos(int unValor) 
     {
-        
+       
         ((BurglarWorld)(getWorld())).getBurglar().setPuntos(unValor);
         
     }    
