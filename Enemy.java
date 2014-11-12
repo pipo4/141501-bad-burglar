@@ -8,12 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
-    
-    public void act() 
-    {
-        // Add your action code here.
-         
-    }  
+   
     /**
      * Con este método se le quitan puntos al ladrón cuando lo atrapa un policia
      * @param unValor un entero para poder  disminuirle puntos al ladron

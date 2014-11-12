@@ -8,139 +8,136 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Policeman extends Enemy
 {
-   private SimpleTimer reloj;
    private GreenfootImage police;
-   private GreenfootImage police0;
    private GreenfootImage police1;
+   private GreenfootImage police1izquierda;
    private GreenfootImage police2;
-   private GreenfootImage police3;
+   private GreenfootImage police2izquierda;
    private GreenfootImage police4;
+   private GreenfootImage police4izquierda;
    private GreenfootImage police5;
-   private GreenfootImage police6;
-   private GreenfootImage police7;
-   private GreenfootImage police8;
-    /**variable que contiene a la dirección que lleva el policia, 1=derecha y -1=izquierda*/
-    private int direccion=1;
+   private GreenfootImage police5izquierda;
+   
+   /**Variable entera que va contando los pasos del policia, pede tener un valor máximo de 4*/
+   private int avanza;
+   /**Variable que contiene a la dirección que lleva el policia, puede ser izquierda o derecha.*/
+   private int direccion;
+   /**Constante entera que representa la dirección hacia la derecha con un 1*/
+   private static final int DERECHA=1;
+   /**Constante entera que representa la dirección hacia la izquierda con un -1*/
+   private static final int IZQUIERDA=-1;
     /**
      * Constructor de la clase Policeman : se crea el personjae con una imagen de Greenfoot
      */
     public Policeman()
     {
-       
+        avanza=0;
         police=new GreenfootImage("poli1.png");
+       
         police1=new GreenfootImage("poli2.png");
-        police2=new GreenfootImage("poli3.png"); 
-        police3=new GreenfootImage("poli4.png"); 
-        police4=new GreenfootImage("poli5.png"); 
-        police5=new GreenfootImage("poli6.png");
-        police6=new GreenfootImage("poli7.png"); 
-        police7=new GreenfootImage("poli8.png"); 
-        police8=new GreenfootImage("poli9.png"); 
-           
-           
-        setImage(police); 
+        police1izquierda=new GreenfootImage("poli2.png");
+        police1izquierda.mirrorHorizontally();
         
+        police2=new GreenfootImage("poli3.png"); 
+        police2izquierda=new GreenfootImage("poli3.png");
+        police2izquierda.mirrorHorizontally();
+        
+        
+        police4=new GreenfootImage("poli6.png"); 
+        police4izquierda=new GreenfootImage("poli6.png");
+        police4izquierda.mirrorHorizontally();
+        
+        police5=new GreenfootImage("poli7.png");
+        police5izquierda=new GreenfootImage("poli7.png");
+        police5izquierda.mirrorHorizontally();
+        
+       
+        setImage(police); 
+        direccion=DERECHA;
     }
     
      /**
-     *En el método act() de la clase Policeman se llaman a los métodos del movimiento del policia y cuando se van a quitar puntos.
+     *En el método act() de la clase Policeman se llaman a los métodos del movimiento del policia y el método
+     * para quitar puntos. También se le cambia la dirección al policia cuando llega a un limite.
      */
     public void act() 
     {
         // Add your action code here.
-       reloj=((BurglarWorld)(getWorld())).getReloj();
-      
-         move();
-         setImage(police);
+       
+       this.setLocation(getX()+direccion,getY());
+           if(getX()>=810){
+               this.direccion=IZQUIERDA;
+            }
+            if(getX()<=250){
+                this.direccion=DERECHA;
+            }
+       
+         camina();
+            
          quitaPuntos();
          
        
    }    
     
+   /**
+    * Éste método incrementa la variable avanza que va a tener un valor máximo de 4, ya que el policia avanza cuatro
+    * pasos y regresa a la posición original, cuando la variable avanza es mayor o igual que cuatro se vuelve a reiniciar
+    * para que de el efecto que el policia camina.
+    */
+   public void camina()
+   {
+       avanza++;
+       if(avanza>=4){
+           avanza=0;
+        }
+           move();
+        
+   }
+   
     /**
      * El método move() permite hacer el movimiento del ladron. El ladron tiene una dirección, y cuando llega al
      * límite donde debe aparecer, se regresa cambiando la dirección
      */
     public void move()
     {
-        this.setLocation(getX()+direccion,getY());
-           if(getX()>=810 || getX()<=250){
-               this.direccion=-direccion;
-               police.mirrorHorizontally();
-            }
+         
+        switch(avanza){
+            case 0: if(direccion==DERECHA){
+                    police=police1;
+                    }
+                    else{
+                        police=police1izquierda;
+                    }
+            break;
             
-       
-        
-        if(reloj.millisElapsed()>=1000){  
-            if(direccion==1){
-            police=police1;
-           }
-            else{
-                police.mirrorHorizontally();
-            }
-        }
-        
-        if(reloj.millisElapsed()>=2000){  
-            if(direccion==1){
-            police=police2;
-           }
-            else{
-                police.mirrorHorizontally();
-            }
-        }
-        
-        if(reloj.millisElapsed()>=3000){  
-            if(direccion==1){
-            police=police3;
-           }
-            else{
-                police.mirrorHorizontally();
-            }
+            case 1: if(direccion==DERECHA){
+                    police=police2;
+                    }
+                    else{
+                        police=police2izquierda;
+                    }
+            break;
+            
+            case 2: if(direccion==DERECHA){
+                    police=police4;
+                    }
+                    else{
+                        police=police4izquierda;
+                    }
+            break;
+            
+            case 3: if(direccion==DERECHA){
+                    police=police5;
+                    }
+                    else{
+                        police=police5izquierda;
+                    }
+            break;
+            
         }
         
         setImage(police);
-       /*  if(reloj.millisElapsed()>=1000){  
-            GreenfootImage police1=new GreenfootImage("poli2.png");
-            police=police1;
-            setImage(police); 
-        }
-            if(reloj.millisElapsed()>=2000){
-               GreenfootImage police2=new GreenfootImage("poli3.png"); 
-               police=police2;
-               setImage(police);
-              }
-              if(reloj.millisElapsed()>=3000){
-               GreenfootImage police3=new GreenfootImage("poli4.png"); 
-               police=police3;
-               setImage(police);
-              }
-                if(reloj.millisElapsed()>=4000){
-               GreenfootImage police4=new GreenfootImage("poli5.png"); 
-               police=police4;
-               setImage(police);
-              }
-                if(reloj.millisElapsed()>=5000){
-                  GreenfootImage police5=new GreenfootImage("poli6.png"); 
-                  police=police5;
-                 setImage(police);
-                }
-                  if(reloj.millisElapsed()>=6000){
-                    GreenfootImage police6=new GreenfootImage("poli7.png"); 
-                    police=police6;
-                    setImage(police); 
-                  }
-                    if(reloj.millisElapsed()>=7000){
-                      GreenfootImage police7=new GreenfootImage("poli8.png"); 
-                       police=police7;
-                      setImage(police);
-                    }
-                       if(reloj.millisElapsed()>=8000){
-                          GreenfootImage police8=new GreenfootImage("poli9.png"); 
-                          police=police8;
-                          setImage(police);
-                        }
-        */
-       
+      
     } 
     
     /**
