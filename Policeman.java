@@ -18,7 +18,7 @@ public class Policeman extends Enemy
    private GreenfootImage police5;
    private GreenfootImage police5izquierda;
    
-   /**Variable entera que va contando los pasos del policia, pede tener un valor máximo de 4*/
+   /**Variable entera que va contando los pasos del policia*/
    private int avanza;
    /**Variable que contiene a la dirección que lleva el policia, puede ser izquierda o derecha.*/
    private int direccion;
@@ -80,14 +80,14 @@ public class Policeman extends Enemy
    }    
     
    /**
-    * Éste método incrementa la variable avanza que va a tener un valor máximo de 4, ya que el policia avanza cuatro
-    * pasos y regresa a la posición original, cuando la variable avanza es mayor o igual que cuatro se vuelve a reiniciar
+    * Éste método incrementa la variable avanza que va a tener un valor máximo de 8, que va a representar la velocidad
+    * que lleva , cuando la variable avanza es mayor o igual que cuatro se vuelve a reiniciar
     * para que de el efecto que el policia camina.
     */
    public void camina()
    {
        avanza++;
-       if(avanza>=4){
+       if(avanza>=8){
            avanza=0;
         }
            move();
