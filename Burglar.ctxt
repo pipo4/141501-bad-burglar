@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Burglar()
-comment0.text=\r\n\ Constructor\ de\ la\ clase\ Burglar.\r\n\ Crea\ la\ imagen\ del\ ladron.\r\n
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Burglar.\r\n\ Se\ crean\ las\ imagenes\ del\ ladron\ de\ todas\ las\ posiciones\ en\ las\ que\ puede\ estar.\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ En\ el\ m\u00E9todo\ act()\ ,\ se\ mandan\ llamar\ a\ los\ m\u00E9todos\ que\ contiene\ el\ movimiento\ del\ ladron,\ \r\n\ validaciones\ para\ que\ no\ se\ salga\ del\ escenario\ y\ se\ acumulan\ los\ puntos\r\n

@@ -58,17 +58,19 @@ public class BurglarWorld extends World
 
         cincuenta=new Cincuenta(); 
         addObject(cincuenta,50,500);
-       
+
         addObject(new Cincuenta(),500,200);
-        
+
         doscientos=new Doscientos();
         addObject(doscientos,300,50);
-        
+
         patrulla=new Patrol();
         addObject(patrulla,560,400);
 
         quinientos = new Quinientos();
         addObject(quinientos, 836, 66);
+        
+        
     }
     
     /**
@@ -95,7 +97,7 @@ public class BurglarWorld extends World
         
         addObject(new Lines(GIRA_90), 877, 50);
         
-        addObject(new Lines(GIRA_0), 940, 230);  
+        addObject(new Lines(GIRA_0), 940, 229);  
         
         addObject(new Lines(GIRA_90), 872, 282);
         addObject(new Lines(GIRA_90), 872, 400);
@@ -106,19 +108,19 @@ public class BurglarWorld extends World
         
         addObject(new Lines(GIRA_0), 688, 111);  
         addObject(new Lines(GIRA_0), 575, 111);  
-        addObject(new Lines(GIRA_0), 455, 111);
+        addObject(new Lines(GIRA_0), 457, 111);
        
         addObject(new Lines(GIRA_90), 745, 392);
         addObject(new Lines(GIRA_90), 745, 480);
         addObject(new Lines(GIRA_90), 745, 600);
          
-        addObject(new Lines(GIRA_0), 695, 339);
+        addObject(new Lines(GIRA_0), 693, 335);
        
         addObject(new Lines(GIRA_90), 640, 393);
        
         addObject(new Lines(GIRA_0), 588, 455);
         addObject(new Lines(GIRA_0), 468, 455);
-        addObject(new Lines(GIRA_0), 372, 455);
+        addObject(new Lines(GIRA_0), 376, 455);
   
         addObject(new Lines(GIRA_90), 320, 508);
         addObject(new Lines(GIRA_90), 320, 540);
@@ -130,7 +132,7 @@ public class BurglarWorld extends World
         
         addObject(new Lines(GIRA_0), 55, 402);
         
-        addObject(new Lines(GIRA_90), 390, 60);  
+        addObject(new Lines(GIRA_90), 390, 59);  
       
         addObject(new Lines(GIRA_90), 245, 43);
         

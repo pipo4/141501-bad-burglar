@@ -38,7 +38,7 @@ public class Burglar extends Actor
     private boolean parado;
     /**
      * Constructor de la clase Burglar.
-     * Crea la imagen del ladron.
+     * Se crean las imagenes del ladron de todas las posiciones en las que puede estar.
      */
     public Burglar()
     {
@@ -85,9 +85,9 @@ public class Burglar extends Actor
     {
         // Add your action code here.
         
-        move(); 
-        validaciones(); 
+        move();  
         caminar();
+        validaciones();
         
         if(isTouching(Cincuenta.class)){
          ((BurglarWorld)(getWorld())).getCincuenta().acumulaPuntos(); 
@@ -165,40 +165,44 @@ public class Burglar extends Actor
                 ladron=ladronizquierda;
             }
             else{
-                ladron=ladronderecha;
+                ladron=ladronderecha; 
             }
         }
         
         if(parado==false){
          switch(avanza){
-            case 0: if(direccion==IZQUIERDA){
-                    ladron=ladronizquierda1;
+            case 0: if(this.direccion==IZQUIERDA){
+                     ladron=ladronizquierda1;
                     }
                     else{
-                        if(direccion==DERECHA){
+                        if(this.direccion==DERECHA){
                          ladron=ladronderecha1;
                         }
+                        
                     }
             break;
             
-            case 1: if(direccion==IZQUIERDA){
-                    ladron=ladronizquierda2;
+            case 1: if(this.direccion==IZQUIERDA){
+                     ladron=ladronizquierda2;
                     }
                     else{
-                        if(direccion==DERECHA){
+                        if(this.direccion==DERECHA){
                           ladron=ladronderecha2;
-                        }
+                        }  
                     }
+                
             break;
             
-            case 2: if(direccion==IZQUIERDA){
-                    ladron=ladronizquierda3;
+            case 2: if(this.direccion==IZQUIERDA){
+                     ladron=ladronizquierda3;
                     }
                     else{
-                        if(direccion==DERECHA){
+                        if(this.direccion==DERECHA){
                         ladron=ladronderecha3;
                        }  
+                       
                     }
+                   
             break;
             
          }
@@ -226,11 +230,11 @@ public class Burglar extends Actor
         }
          
         if(Greenfoot.isKeyDown("right")){
-          setLocation(getX()+DERECHA,getY());
+          setLocation(getX()+IZQUIERDA,getY());
         }
           
         if(Greenfoot.isKeyDown("left")){
-          setLocation(getX()+IZQUIERDA,getY());
+          setLocation(getX()+DERECHA,getY());
         }
         }
         

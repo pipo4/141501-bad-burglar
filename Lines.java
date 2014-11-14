@@ -18,7 +18,7 @@ public class Lines extends Actor
         this.turn(dir);
         GreenfootImage imagen=new GreenfootImage("brick.png");
         imagen.scale(imagen.getWidth()*4,imagen.getHeight());
-        imagen.setColor(java.awt.Color.blue);
+        imagen.setColor(java.awt.Color.blue);   
         imagen.fill();
         setImage(imagen);
     } 
