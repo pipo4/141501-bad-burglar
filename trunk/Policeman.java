@@ -65,13 +65,24 @@ public class Policeman extends Enemy
         // Add your action code here.
        
        this.setLocation(getX()+direccion,getY());
-           if(getX()>=810){
+        if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 0){
+           if(getX()>=820){
                this.direccion=IZQUIERDA;
             }
             if(getX()<=250){
                 this.direccion=DERECHA;
             }
-       
+        }
+        
+         if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 1){
+           setLocation(getX(),400);
+           if(getX()>=310){
+               this.direccion=IZQUIERDA;
+            }
+            if(getX()<=145){
+                this.direccion=DERECHA;
+            }
+        }
          camina();
             
          quitaPuntos();

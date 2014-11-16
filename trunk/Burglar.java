@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+
 /**
  * La clase Burglar contiene al personaje principal del juego, un ladrón. En esta clase se crea una
  * imagen del personaje que va a tener vidas y puntos , asi como movimiento del ladrón en el escenario
@@ -36,6 +37,8 @@ public class Burglar extends Actor
     private static final int ABAJO=3;
     /**variable booleana que con un true indica que el personaje esta parado, con un false indica que el personaje esta caminando*/
     private boolean parado;
+    private int nivel;
+    
     /**
      * Constructor de la clase Burglar.
      * Se crean las imagenes del ladron de todas las posiciones en las que puede estar.
@@ -75,6 +78,7 @@ public class Burglar extends Actor
         avanza=0;
         direccion=IZQUIERDA;
         parado=true;
+        nivel=0;
     }
     
     /**
@@ -88,7 +92,7 @@ public class Burglar extends Actor
         move();  
         caminar();
         validaciones();
-        
+       
         if(isTouching(Cincuenta.class)){
          ((BurglarWorld)(getWorld())).getCincuenta().acumulaPuntos(); 
           removeTouching(Cincuenta.class); 
@@ -98,13 +102,19 @@ public class Burglar extends Actor
         if(isTouching(Doscientos.class)){
          ((BurglarWorld)(getWorld())).getDoscientos().acumulaPuntos(); 
           removeTouching(Doscientos.class);
+          
         }
         
         if(isTouching(Quinientos.class)){
         ((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
           removeTouching(Quinientos.class);
-        }
          
+        }
+       
+       if(puntos>=650 && getX()<=100){  
+           nivel=1;
+           ((BurglarWorld)(getWorld())).cambiaNivel1();
+        }
     }   
     
     /**
@@ -267,5 +277,11 @@ public class Burglar extends Actor
         return puntos;
     }
     
-   
+     /**
+     * método que regresa el nivel en el que se encuentra el jugador
+     */
+    public int getNivel()
+    {
+        return nivel;
+    }
 }

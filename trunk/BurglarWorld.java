@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 /**
  * La clase BurglarWorld va a contener el escenario del juego y también donde se controlarán los niveles del 
  * juego. Esto incluye creación de personajes u objetos y su movimiento(si es que lo tiene)
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.11)
+ * @version (2014.11.15)
  */
 public class BurglarWorld extends World
 {
@@ -20,9 +21,11 @@ public class BurglarWorld extends World
     private static final int GIRA_0=0;
     /** Constante para girar 90 grados el bloque de la clase Lines y ponerlo en el escenario para el laberinto*/
     private static final int GIRA_90=90;
+    /**Constante entera que contiene el color para dibujar el escenario*/
+    private static final int AZUL=0;
+   
     private GreenfootSound mision;
-
-    
+   
     /**
      * Constructor de la clase BurglarWorld.
      * Se crean los mensajes de puntos y vidas
@@ -48,7 +51,7 @@ public class BurglarWorld extends World
      */
     private void prepare()
     {
-        dibujaEscenario();//dibuja las lineas del escenario
+        dibujaEscenario();//dibuja las lineas del escenario 
 
         burglar = new Burglar();//agrega al ladron
         addObject(burglar, 954, 172);
@@ -57,19 +60,17 @@ public class BurglarWorld extends World
         addObject(police,655,160);
 
         cincuenta=new Cincuenta(); 
-        addObject(cincuenta,50,500);
-
-        addObject(new Cincuenta(),500,200);
-
+        addObject(cincuenta,800,200); 
+       
         doscientos=new Doscientos();
         addObject(doscientos,300,50);
-
+       
         patrulla=new Patrol();
         addObject(patrulla,560,400);
 
         quinientos = new Quinientos();
-        addObject(quinientos, 836, 66);
-        
+        addObject(quinientos, 90, 500);
+         
         
     }
     
@@ -78,11 +79,14 @@ public class BurglarWorld extends World
      */
     public void act()
     {
+       
        mensajePuntos.setValue(burglar.getPuntos());
-       
-       
+       //cambiaNivel();
+      
        //mision.playLoop();
+       
        //mision.stop();
+       
     }
     
     /**
@@ -139,7 +143,26 @@ public class BurglarWorld extends World
         addObject(new Lines(GIRA_0), 180, 95);
         addObject(new Lines(GIRA_0), 60, 95);
     }
-   
+    
+    /**
+     * método que verifica el número de objetos en BurglarWorld para cambiar de nivel
+     */
+    public void cambiaNivel1()
+    {
+        
+           GreenfootImage fondoNivel2=new GreenfootImage("burlap.jpg");
+           fondoNivel2.scale(fondoNivel2.getWidth(), fondoNivel2.getHeight());
+           setBackground(fondoNivel2);
+           
+           burglar.setLocation(954, 172);
+           
+           removeObject(patrulla);
+           
+           addObject(cincuenta,450,300);
+           addObject(doscientos,230,550);
+           addObject(quinientos,160,130);
+           addObject(new Doscientos(),780,450);
+    }
    
     /**
      * Regresa al objeto de la clase Burglar para poder acceder a sus métodos
@@ -186,6 +209,6 @@ public class BurglarWorld extends World
     {
         return mensajePuntos;
     }
-    
-    
+   
+   
 }
