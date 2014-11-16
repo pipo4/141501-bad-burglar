@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * imagen del personaje que va a tener vidas y puntos , asi como movimiento del ladrón en el escenario
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.12) 
+ * @version (2014.11.16) 
  */
 public class Burglar extends Actor
 {
@@ -109,6 +109,10 @@ public class Burglar extends Actor
         ((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
           removeTouching(Quinientos.class);
          
+        }
+        
+        if(isTouching(Policeman.class)){
+             ((BurglarWorld)(getWorld())).getPolice().quitaPuntos();
         }
        
        if(puntos>=650 && getX()<=100){  
