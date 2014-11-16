@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * juego. Esto incluye creación de personajes u objetos y su movimiento(si es que lo tiene)
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.15)
+ * @version (2014.11.16)
  */
 public class BurglarWorld extends World
 {
@@ -14,6 +14,7 @@ public class BurglarWorld extends World
     private SimpleTimer reloj;
     private Policeman police;
     private Patrol patrulla;
+    private Handcuffs esposas;
     private Cincuenta cincuenta;
     private Doscientos doscientos;
     private Quinientos quinientos;
@@ -151,17 +152,20 @@ public class BurglarWorld extends World
     {
         
            GreenfootImage fondoNivel2=new GreenfootImage("burlap.jpg");
-           fondoNivel2.scale(fondoNivel2.getWidth(), fondoNivel2.getHeight());
-           setBackground(fondoNivel2);
+           fondoNivel2.scale(fondoNivel2.getWidth(), fondoNivel2.getHeight()); 
+           setBackground(fondoNivel2); 
            
            burglar.setLocation(954, 172);
-           
+           police.setLocation(300,400);
            removeObject(patrulla);
            
            addObject(cincuenta,450,300);
            addObject(doscientos,230,550);
            addObject(quinientos,160,130);
            addObject(new Doscientos(),780,450);
+           
+           esposas= new Handcuffs();
+           addObject(esposas,720,200);
     }
    
     /**
@@ -208,6 +212,16 @@ public class BurglarWorld extends World
     public Counter getMensajePuntos()
     {
         return mensajePuntos;
+    }
+    
+    public Counter getMensajeVidas()
+    {
+        return mensajeVidas;
+    }
+    
+    public Policeman getPolice()
+    {
+        return police;
     }
    
    

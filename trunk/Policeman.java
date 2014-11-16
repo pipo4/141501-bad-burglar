@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * La clase Policeman es un enemigo del juego que va a tener movimiento en el escenario, tratando de atrapar al ladron.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.11)
+ * @version (2014.11.16)
  */
 public class Policeman extends Enemy
 {
@@ -75,7 +75,7 @@ public class Policeman extends Enemy
         }
         
          if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 1){
-           setLocation(getX(),400);
+           
            if(getX()>=310){
                this.direccion=IZQUIERDA;
             }
@@ -85,7 +85,7 @@ public class Policeman extends Enemy
         }
          camina();
             
-         quitaPuntos();
+        // quitaPuntos();
          
        
    }    
@@ -156,7 +156,7 @@ public class Policeman extends Enemy
      */
      public void quitaPuntos()
     {
-        if(isTouching(Burglar.class)){
+        //if(isTouching(Burglar.class)){
           // if( intersects(((BurglarWorld)(getWorld())).getBurglar())){ 
                int puntos=((BurglarWorld)(getWorld())).getBurglar().getPuntos();
             if(((BurglarWorld)(getWorld())).getMensajePuntos().getValue()>0) { 
@@ -165,7 +165,7 @@ public class Policeman extends Enemy
                // puntos=puntos-50;
                 super.quitaPuntos(puntos);
             }
-        }
+       // }
     }
 }
 
