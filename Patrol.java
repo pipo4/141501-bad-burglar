@@ -44,6 +44,7 @@ public class Patrol extends Enemy
     public void move()
     {
         this.setLocation(getX()+direccion,getY());
+         //if(((BurglarWorld)(getWorld())).getNivel() == 0){
            if(getX()<=180){
                this.direccion=DERECHA;
                patrulla.mirrorHorizontally(); 
@@ -52,7 +53,7 @@ public class Patrol extends Enemy
                this.direccion=IZQUIERDA;
                patrulla.mirrorHorizontally(); 
             }
-            
+       // }
     }
     
     /**

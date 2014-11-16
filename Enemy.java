@@ -17,6 +17,7 @@ public class Enemy extends Actor
     {
         
         ((BurglarWorld)(getWorld())).getBurglar().setPuntos(unValor);
+       
         
     } 
    
