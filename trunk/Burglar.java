@@ -115,10 +115,22 @@ public class Burglar extends Actor
              ((BurglarWorld)(getWorld())).getPolice().quitaPuntos();
         }
        
-       if(puntos>=650 && getX()<=100){  
+       if(puntos>=650 && getX()<=115 && getY()>=440 && nivel==0){  
            nivel=1;
            ((BurglarWorld)(getWorld())).cambiaNivel1();
         }
+        
+       if(puntos>=1500 && getY()>=540 && getX()>=225 && nivel==1){
+           nivel=2;
+           ((BurglarWorld)(getWorld())).cambiaNivel2();
+        }
+        
+       if(puntos>=1900){
+           nivel=3;
+          
+        }
+        
+      
     }   
     
     /**

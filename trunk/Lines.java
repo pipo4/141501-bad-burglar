@@ -35,7 +35,14 @@ public class Lines extends Actor
     public void act()
     {
         if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==1){
-            imagen.setColor(java.awt.Color.yellow); 
+            imagen.setColor(java.awt.Color.orange); 
+            imagen.fill();
+            setImage(imagen);
+        }
+        
+        
+        if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==2){
+            imagen.setColor(java.awt.Color.green); 
             imagen.fill();
             setImage(imagen);
         }
