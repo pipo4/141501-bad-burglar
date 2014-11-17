@@ -15,6 +15,9 @@ public class BurglarWorld extends World
     private Policeman police;
     private Patrol patrulla;
     private Handcuffs esposas;
+    private PepperGas gas;
+    private Bomb bomba;
+    private Alarm alarma;
     private Cincuenta cincuenta;
     private Doscientos doscientos;
     private Quinientos quinientos;
@@ -70,7 +73,7 @@ public class BurglarWorld extends World
         addObject(patrulla,560,400);
 
         quinientos = new Quinientos();
-        addObject(quinientos, 90, 500);
+        addObject(quinientos, 100, 450);
          
         
     }
@@ -82,11 +85,11 @@ public class BurglarWorld extends World
     {
        
        mensajePuntos.setValue(burglar.getPuntos());
-       //cambiaNivel();
-      
+       
        //mision.playLoop();
        
        //mision.stop();
+       
        
     }
     
@@ -146,26 +149,61 @@ public class BurglarWorld extends World
     }
     
     /**
-     * método que verifica el número de objetos en BurglarWorld para cambiar de nivel
+     * Método que verifica el número de objetos en BurglarWorld para cambiar de nivel, agregando
+     * como enemigos a unas esposas y un gas pimineta
      */
     public void cambiaNivel1()
     {
         
-           GreenfootImage fondoNivel2=new GreenfootImage("burlap.jpg");
-           fondoNivel2.scale(fondoNivel2.getWidth(), fondoNivel2.getHeight()); 
+           GreenfootImage fondoNivel2=new GreenfootImage("images (6).jpg");
+           
            setBackground(fondoNivel2); 
            
            burglar.setLocation(954, 172);
            police.setLocation(300,400);
            removeObject(patrulla);
            
-           addObject(cincuenta,450,300);
-           addObject(doscientos,230,550);
-           addObject(quinientos,160,130);
-           addObject(new Doscientos(),780,450);
+           addObject(cincuenta,450,300);//450,300
+           addObject(doscientos,230,550);//230,550
+           addObject(quinientos,160,130);//160,130
+           addObject(new Doscientos(),780,350);//780,350
            
            esposas= new Handcuffs();
-           addObject(esposas,720,200);
+           addObject(esposas,736,120);
+           Handcuffs esposas2=new Handcuffs();
+           addObject(esposas2,630,305);
+           
+           gas=new PepperGas();
+           addObject(gas,350,170);
+    }
+    
+     /**
+     * método que verifica el número de objetos en BurglarWorld para cambiar de nivel
+     */
+    public void cambiaNivel2()
+    {
+        
+           GreenfootImage fondoNivel2=new GreenfootImage("images (15).jpg");
+           fondoNivel2.scale(fondoNivel2.getWidth(), fondoNivel2.getHeight()); 
+           fondoNivel2.setTransparency(190);
+           setBackground(fondoNivel2); 
+           removeObject(police);
+           removeObject(gas);
+           
+           burglar.setLocation(954, 172);
+           
+           bomba=new Bomb();
+           addObject(bomba,200,135);
+           addObject(new Bomb(),300,300);
+           
+           alarma= new Alarm(); 
+           addObject(alarma,100,550);
+           
+           
+           addObject(doscientos,580,420);
+           addObject(cincuenta,150,140);
+           addObject(quinientos,280,330);
+           addObject(new Cincuenta(),820,50);
     }
    
     /**
@@ -223,6 +261,10 @@ public class BurglarWorld extends World
     {
         return police;
     }
-   
+    
+    public SimpleTimer getReloj()
+    {
+        return reloj;
+    }
    
 }

@@ -10,10 +10,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Handcuffs extends Enemy
 {
     private GreenfootImage esposas;
-    /**Constante que representa la direccion hacia arriba del enemigo con valor de -4*/
-    private static final int ARRIBA=-4;
-     /**Constante que representa la direccion hacia abajo del enemigo con valor de 4*/
-    private static final int ABAJO=4;
+    /**Constante que representa la direccion hacia arriba del enemigo con valor de -3*/
+    private static final int ARRIBA=-3;
+     /**Constante que representa la direccion hacia abajo del enemigo con valor de 3*/
+    private static final int ABAJO=3;
     /**Variable entera que contiene la direccion de las esposas*/
     private int direccion;
     
@@ -34,14 +34,31 @@ public class Handcuffs extends Enemy
      */
     public void act()
     {
-        this.setLocation(getX(), getY()+direccion);
-        this.turn(direccion*2);
-        if(getY()>=305){
-            this.direccion=ARRIBA;
+        if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==1){
+          this.setLocation(getX(), getY()+direccion);
+            if(getY()>=305){ 
+              this.direccion=ARRIBA; 
+            }
+             if(getY()<=130){
+               this.direccion=ABAJO;
+             }
+           
         }
-         if(getY()<=130){
-            this.direccion=ABAJO;
+        
+         if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==2 || ((BurglarWorld)(getWorld())).getBurglar().getNivel()==3){
+          this.setLocation(getX()+direccion, getY()+direccion);
+            if(getY()>=270){ 
+              this.direccion=ARRIBA; 
+             }
+             if(getY()<=130){
+               this.direccion=ABAJO;
+             }
+          
         }
+        
+       this.turn(direccion*2);
+        
+       
         quitaVida(); 
     }
     
