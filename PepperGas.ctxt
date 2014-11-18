@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PepperGas()
+comment0.text=\r\n\ Constructor\ de\ la\ claae\ PepperGas.Crea\ al\ enemigo\ apartir\ de\ una\ imagen\ de\ GreenfootImage\r\n\ y\ se\ le\ asigna\ una\ direccion\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ El\ m\u00E9todo\ actua\ permite\ hacer\ el\ movimiento\ del\ enemigo\r\n
 numComments=2

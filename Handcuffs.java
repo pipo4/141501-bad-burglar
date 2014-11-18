@@ -70,7 +70,7 @@ public class Handcuffs extends Enemy
     {
         if(this.isTouching(Burglar.class)){
           
-            ((BurglarWorld)(getWorld())).getMensajeVidas().add(-1);
+            ((BurglarWorld)(getWorld())).restaVidas();
            
         }
     }

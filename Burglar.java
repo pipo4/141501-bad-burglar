@@ -95,6 +95,7 @@ public class Burglar extends Actor
        
         if(isTouching(Cincuenta.class)){
          ((BurglarWorld)(getWorld())).getCincuenta().acumulaPuntos(); 
+         
           removeTouching(Cincuenta.class); 
           
         }
@@ -106,15 +107,13 @@ public class Burglar extends Actor
         }
         
         if(isTouching(Quinientos.class)){
-        ((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
+         ((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
           removeTouching(Quinientos.class);
          
         }
         
-        if(isTouching(Policeman.class)){
-             ((BurglarWorld)(getWorld())).getPolice().quitaPuntos();
-        }
        
+        
        if(puntos>=650 && getX()<=115 && getY()>=440 && nivel==0){  
            nivel=1;
            ((BurglarWorld)(getWorld())).cambiaNivel1();
@@ -163,6 +162,10 @@ public class Burglar extends Actor
      }
      else{
          parado=true;
+        }
+        
+     if(isTouching(Policeman.class)){
+             ((BurglarWorld)(getWorld())).getPolice().quitaPuntos();
         }
     }
     
@@ -295,9 +298,21 @@ public class Burglar extends Actor
     
      /**
      * método que regresa el nivel en el que se encuentra el jugador
+     * @return nivel número de nivel del juego
      */
     public int getNivel()
     {
         return nivel;
     }
+    
+    /**
+     * Método de acceso que permite checar las vidas del jugador
+     * @return vidas número de vidas que tiene el jugador
+     */
+    public int getVidas()
+    {
+        return vidas;
+    }
+    
+   
 }

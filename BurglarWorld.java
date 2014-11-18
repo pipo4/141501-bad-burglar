@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
+
 /**
  * La clase BurglarWorld va a contener el escenario del juego y también donde se controlarán los niveles del 
  * juego. Esto incluye creación de personajes u objetos y su movimiento(si es que lo tiene)
@@ -85,8 +85,8 @@ public class BurglarWorld extends World
     {
        
        mensajePuntos.setValue(burglar.getPuntos());
-       
-       //mision.playLoop();
+      
+       //mision.play();
        
        //mision.stop();
        
@@ -164,8 +164,10 @@ public class BurglarWorld extends World
            removeObject(patrulla);
            
            addObject(cincuenta,450,300);//450,300
+           
            addObject(doscientos,230,550);//230,550
            addObject(quinientos,160,130);//160,130
+           
            addObject(new Doscientos(),780,350);//780,350
            
            esposas= new Handcuffs();
@@ -252,19 +254,36 @@ public class BurglarWorld extends World
         return mensajePuntos;
     }
     
+    /**
+     * Método de acceso que regresa el mensaje de las vidas que tiene el jugador
+     * @return mensajeVidas Objeto de la clase Counter
+     */
     public Counter getMensajeVidas()
     {
         return mensajeVidas;
     }
     
+    /**
+     * Método que regresa a un enemigo del juegp, en este caso un policia
+     * @return police enemigo de la subclase Policeman
+     */
     public Policeman getPolice()
     {
         return police;
     }
     
+    /**
+     * Método que regresa el reloj del juego
+     * @return reloj objeto de la clase SimpleTimer
+     */
     public SimpleTimer getReloj()
     {
         return reloj;
+    }
+    
+    public void restaVidas()
+    {
+        mensajeVidas.add(-1);
     }
    
 }

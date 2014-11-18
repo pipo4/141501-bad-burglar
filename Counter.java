@@ -42,6 +42,7 @@ public class Counter extends Actor
     public Counter()
     {
         this(new String());
+       
     }
 
     /**
@@ -53,7 +54,8 @@ public class Counter extends Actor
         value = 0;
         target = 0;
         this.prefix = prefix;
-        updateImage();
+       
+         updateImage();
     }
     
     /**
