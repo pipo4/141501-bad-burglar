@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Alarm()
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Alarm.\ Crea\ la\ imagen\ de\ una\ alarma\ por\ medio\ de\ \r\n\ GreenfootImage\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ El\ m\u00E9todo\ act\ verifica\ si\ el\ jugador\ ha\ llegado\ al\ \u00FAltimo\ nivel\ para\ activar\r\n\ la\ alarma\ de\ seguridad\r\n
 numComments=2

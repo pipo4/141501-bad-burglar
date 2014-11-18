@@ -10,6 +10,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bomb extends Enemy
 {
     private GreenfootImage bomba;
+    
+    /**
+     * Constructor de la clase Bomb. Crea al enemigo con una imagen de GreenfootImage
+     */
     public Bomb()
     {
         bomba= new GreenfootImage("bomb.png");

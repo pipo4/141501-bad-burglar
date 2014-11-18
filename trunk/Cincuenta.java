@@ -23,6 +23,11 @@ public class Cincuenta extends Money
         
     }
      
+    public void act()
+    {
+        
+    }
+    
     /**
      * Este metodo acumula los puntos del ladrón según sea el valor del billete
      * 

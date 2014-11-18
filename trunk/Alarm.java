@@ -11,6 +11,11 @@ public class Alarm extends Enemy
 {
     private GreenfootImage alarma;
     private GreenfootSound alarmSystem;
+    
+    /**
+     * Constructor de la clase Alarm. Crea la imagen de una alarma por medio de 
+     * GreenfootImage
+     */
     public Alarm()
     {
         alarma=new GreenfootImage("alarma.png");
@@ -20,6 +25,10 @@ public class Alarm extends Enemy
         alarmSystem=new GreenfootSound("Alarma Efecto de Sonido.mp3");
     }
     
+    /**
+     * El método act verifica si el jugador ha llegado al último nivel para activar
+     * la alarma de seguridad
+     */
     public void act() 
     {
         if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 3){
@@ -29,10 +38,11 @@ public class Alarm extends Enemy
             if(((BurglarWorld)(getWorld())).getReloj().millisElapsed()>=2000){
                 alarmSystem.stop();
             }*/
-            if(((BurglarWorld)(getWorld())).getBurglar().getPuntos()>= 2150 ){
+            if(((BurglarWorld)(getWorld())).getBurglar().getPuntos()>= 2200 ){
                  alarmSystem.stop();
             }
         }
+        
     }    
    
 }
