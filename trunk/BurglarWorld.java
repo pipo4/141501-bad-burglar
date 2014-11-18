@@ -48,6 +48,7 @@ public class BurglarWorld extends World
         mensajePuntos.setValue(0);
         addObject(mensajePuntos,58,55);
         mision=new GreenfootSound("mision imposible.mp3");
+        mision.playLoop();
     }
 
     /**
@@ -284,6 +285,26 @@ public class BurglarWorld extends World
     public void restaVidas()
     {
         mensajeVidas.add(-1);
+    }
+    
+    /**
+     * Método que es llamado por el sistema de Greenfoot cuando se ha iniciado la simulación, y
+     * empieza iniciando el sonido del juego
+     */
+    public void started()
+    {
+        super.started();
+        mision.play();
+    }
+    
+    /**
+     * Método que es llamado por el sistema de Greenfoot cuando se pone en pausa el proyecto, cuando sucede esto 
+     * tambien se pause la canción
+     */
+    public void stopped()
+    {
+        super.stopped();
+        mision.pause();
     }
    
 }
