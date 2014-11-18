@@ -21,6 +21,8 @@ public class BurglarWorld extends World
     private Cincuenta cincuenta;
     private Doscientos doscientos;
     private Quinientos quinientos;
+    private Cien cien;
+    private Veinte veinte;
     /** Constante para girar 0 grados el bloque de la clase Lines y ponerlo en el escenario para el laberinto*/
     private static final int GIRA_0=0;
     /** Constante para girar 90 grados el bloque de la clase Lines y ponerlo en el escenario para el laberinto*/
@@ -65,7 +67,10 @@ public class BurglarWorld extends World
         addObject(police,655,160);
 
         cincuenta=new Cincuenta(); 
-        addObject(cincuenta,800,200); 
+        addObject(cincuenta,500,280); 
+        
+        veinte= new Veinte();
+        addObject(veinte,800,200);
        
         doscientos=new Doscientos();
         addObject(doscientos,300,50);
@@ -164,12 +169,13 @@ public class BurglarWorld extends World
            police.setLocation(300,400);
            removeObject(patrulla);
            
-           addObject(cincuenta,450,300);//450,300
-           
+           addObject(cincuenta,500,370);//450,300
+           addObject(veinte,680,200);
            addObject(doscientos,230,550);//230,550
            addObject(quinientos,160,130);//160,130
            
-           addObject(new Doscientos(),780,350);//780,350
+           cien=new Cien();
+           addObject(cien,780,450);//780,350
            
            esposas= new Handcuffs();
            addObject(esposas,736,120);
@@ -178,6 +184,8 @@ public class BurglarWorld extends World
            
            gas=new PepperGas();
            addObject(gas,350,170);
+           
+           
     }
     
      /**
@@ -196,17 +204,18 @@ public class BurglarWorld extends World
            burglar.setLocation(954, 172);
            
            bomba=new Bomb();
-           addObject(bomba,200,135);
-           addObject(new Bomb(),300,300);
+           addObject(bomba,140,135);
+           addObject(new Bomb(),320,300);
            
            alarma= new Alarm(); 
            addObject(alarma,100,550);
            
            
            addObject(doscientos,580,420);
-           addObject(cincuenta,150,140);
-           addObject(quinientos,280,330);
-           addObject(new Cincuenta(),820,50);
+           addObject(cincuenta,90,140);
+           addObject(quinientos,300,330);
+           addObject(cien,830,50);
+           addObject(veinte,790,460);
     }
    
     /**
@@ -305,6 +314,16 @@ public class BurglarWorld extends World
     {
         super.stopped();
         mision.pause();
+    }
+    
+    public Veinte getVeinte()
+    {
+        return veinte;
+    }
+    
+    public Cien getCien()
+    {
+        return cien;
     }
    
 }

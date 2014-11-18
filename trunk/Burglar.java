@@ -112,8 +112,19 @@ public class Burglar extends Actor
          
         }
         
-       
+         if(isTouching(Veinte.class)){
+         ((BurglarWorld)(getWorld())).getVeinte().acumulaPuntos(); 
+          removeTouching(Veinte.class);
+          
+        }
         
+        if(isTouching(Cien.class)){
+         ((BurglarWorld)(getWorld())).getCien().acumulaPuntos();
+          removeTouching(Cien.class);
+         
+        }
+        
+      
        if(puntos>=650 && getX()<=115 && getY()>=440 && nivel==0){  
            nivel=1;
            ((BurglarWorld)(getWorld())).cambiaNivel1();
