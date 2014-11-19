@@ -1,5 +1,7 @@
 #BlueJ class context
-comment0.params=unValor
-comment0.target=void\ quitaPuntos(int)
-comment0.text=\r\n\ Con\ este\ m\u00E9todo\ se\ le\ quitan\ puntos\ al\ ladr\u00F3n\ cuando\ lo\ atrapa\ un\ policia\r\n\ @param\ unValor\ un\ entero\ para\ poder\ \ disminuirle\ puntos\ al\ ladron\r\n
-numComments=1
+comment0.params=
+comment0.target=void\ quitaVida()
+comment1.params=
+comment1.target=void\ quitaPuntos()
+comment1.text=\r\n\ El\ m\u00E9todo\ quitaPuntos()\ verifica\ si\ un\ objeto\ de\ la\ clase\ Policeman\ toca\ al\ ladron,\ se\ tendr\u00E1\ que\ quitar\ puntos\r\n
+numComments=2

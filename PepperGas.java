@@ -28,6 +28,7 @@ public class PepperGas extends Enemy
         gas.scale(gas.getWidth()/5,gas.getHeight()/5);
         setImage(gas);
         direccion=IZQUIERDA;
+        
     }
     
     /**
@@ -43,5 +44,9 @@ public class PepperGas extends Enemy
                this.direccion=DERECHA;
              }
        this.turn(direccion-2);
+       
+       super.quitaVida();
     }    
+    
+   
 }
