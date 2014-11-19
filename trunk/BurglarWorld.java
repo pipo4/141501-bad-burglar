@@ -247,11 +247,27 @@ public class BurglarWorld extends World
     
     /**
      * Regresa un objeto de la clase Quinientos para acceder a sus métodos
-     * @return quinientos Un objeto de la claseQuinientos
+     * @return quinientos Un objeto de la clase Quinientos
      */
     public Quinientos getQuinientos()
     {
         return quinientos;
+    }
+    /**
+     * Regresa al billete de veinte que se creo
+     * @return veinte Un objeto de la clase Veinte
+     */
+     public Veinte getVeinte()
+    {
+        return veinte;
+    }
+    /**
+     * Regresa al objeto cien de la clase Cien
+     * @return cien un objeto de la clase cien
+     */
+    public Cien getCien()
+    {
+        return cien;
     }
     
     /**
@@ -316,14 +332,6 @@ public class BurglarWorld extends World
         mision.pause();
     }
     
-    public Veinte getVeinte()
-    {
-        return veinte;
-    }
-    
-    public Cien getCien()
-    {
-        return cien;
-    }
+   
    
 }

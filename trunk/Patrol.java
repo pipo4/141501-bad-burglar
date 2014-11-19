@@ -35,7 +35,7 @@ public class Patrol extends Enemy
         // Add your action code here.
          
         move();
-        quitaPuntos();
+        super.quitaPuntos();
     }    
     
     /**
@@ -55,21 +55,5 @@ public class Patrol extends Enemy
             }
        // }
     }
-    
-    /**
-     * El método quitaPuntos() verifica si un objeto de la clase Patrol toca al ladron, se tendrá que quitar puntos
-     */
-     public void quitaPuntos()
-    {
-        if(isTouching(Burglar.class)){
-          // if( intersects(((BurglarWorld)(getWorld())).getBurglar())){ 
-               int puntos=((BurglarWorld)(getWorld())).getBurglar().getPuntos();
-            if(((BurglarWorld)(getWorld())).getMensajePuntos().getValue()>0) { 
-               // if(((BurglarWorld)(getWorld())).getBurglar().getPuntos()>49){
-                puntos=puntos-1;
-               // puntos=puntos-50;
-                super.quitaPuntos(puntos);
-            }
-        }
-    }
+   
 }

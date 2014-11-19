@@ -59,19 +59,8 @@ public class Handcuffs extends Enemy
        this.turn(direccion*2);
         
        
-        quitaVida(); 
+       super.quitaVida(); 
     }
     
-    /**
-     * Este método le quita una vida al jugador en caso de que el ladron llegara
-     * a tocar las esposas
-     */
-    public void quitaVida()
-    {
-        if(this.isTouching(Burglar.class)){
-          
-            ((BurglarWorld)(getWorld())).restaVidas();
-           
-        }
-    }
+    
 }

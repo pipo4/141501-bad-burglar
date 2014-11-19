@@ -27,6 +27,8 @@ public class Bomb extends Enemy
      */
     public void act() 
     {
-        // Add your action code here.
+        super.quitaVida();
     }    
+    
+    
 }

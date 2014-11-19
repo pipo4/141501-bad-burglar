@@ -38,6 +38,7 @@ public class Burglar extends Actor
     /**variable booleana que con un true indica que el personaje esta parado, con un false indica que el personaje esta caminando*/
     private boolean parado;
     private int nivel;
+    private boolean intersecta;
     
     /**
      * Constructor de la clase Burglar.
@@ -79,6 +80,7 @@ public class Burglar extends Actor
         direccion=IZQUIERDA;
         parado=true;
         nivel=0;
+        intersecta=false;
     }
     
     /**
@@ -140,8 +142,11 @@ public class Burglar extends Actor
           
         }
         
+       
       
     }   
+    
+    
     
     /**
      * Éste método contiene el movimiento del personaje (arriba,abajo,izquierda,derecha) y se cambia la
@@ -175,9 +180,9 @@ public class Burglar extends Actor
          parado=true;
         }
         
-     if(isTouching(Policeman.class)){
+     /*if(isTouching(Policeman.class)){
              ((BurglarWorld)(getWorld())).getPolice().quitaPuntos();
-        }
+        }*/
     }
     
     /**
