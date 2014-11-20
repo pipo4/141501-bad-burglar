@@ -11,7 +11,7 @@ public class Cien extends Money
      private int valor;
     /**
      * Constructor de la clase Cien.
-     * Se crea la imagen del billete 
+     * Se crea la imagen del billete y se asigna el valor a 100.
      */
      public Cien()
     {

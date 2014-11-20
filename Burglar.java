@@ -3,13 +3,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * La clase Burglar contiene al personaje principal del juego, un ladrón. En esta clase se crea una
- * imagen del personaje que va a tener vidas y puntos , asi como movimiento del ladrón en el escenario
+ * imagen del personaje que va a tener vidas y puntos , asi como movimiento del ladrón en el escenario, 
+ * para esto es necesario declarar cuatro constantes que van a contener la direccion que lleva
  * 
  * @author (Cerda Varela Ignacio) 
  * @version (2014.11.19) 
  */
 public class Burglar extends Actor
 {
+    /**Variables para crear las imagenes del ladron cuando camina*/
     private GreenfootImage ladron;
     private GreenfootImage ladronizquierda;
     private GreenfootImage ladronizquierda1;
@@ -23,7 +25,7 @@ public class Burglar extends Actor
     private int puntos;
     /**Variable que contiene las vidas que tiene el jugador*/
     private int vidas;
-    /**Variable que permitirá avanzar al personaje, contiene los pasos del personaje*/
+    /**Variable que permitirá avanzar al personaje, contiene los pasos que dara el ladron*/
     private int avanza;
     /**Contiene la direccion que lleva el ladron*/
     private int direccion;
@@ -35,13 +37,15 @@ public class Burglar extends Actor
     private static final int ARRIBA=-3;
     /**Constante que representa la dirección hacia abajo */
     private static final int ABAJO=3;
-    /**variable booleana que con un true indica que el personaje esta parado, con un false indica que el personaje esta caminando*/
+    /**variable booleana que con un true indica que el personaje esta parado, con un false indica que el personaje esta en movimiento*/
     private boolean parado;
+    /**contiene el nivel en el que se encuentra el jugador*/
     private int nivel;
    
     /**
      * Constructor de la clase Burglar.
      * Se crean las imagenes del ladron de todas las posiciones en las que puede estar.
+     * Se inicializan los puntos en cero y las vidas en tres.
      */
     public Burglar()
     {
@@ -84,7 +88,8 @@ public class Burglar extends Actor
     
     /**
      * En el método act() , se mandan llamar a los métodos que contiene el movimiento del ladron, 
-     * validaciones para que no se salga del escenario y se acumulan los puntos
+     * validaciones para que no se salga del escenario y el acumulador de los puntos cuando 
+     * el ladron toque algun billete
      */
     public void act() 
     {
@@ -152,6 +157,8 @@ public class Burglar extends Actor
     /**
      * Éste método contiene el movimiento del personaje (arriba,abajo,izquierda,derecha) y se cambia la
      * dirección según la tecla que se presione.
+     * Cuando se presiona una tecla la variable parado es false, de  lo contrario dicha variable 
+     * sigue siendo true.
      */
     public void move()
     {

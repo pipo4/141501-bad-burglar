@@ -22,8 +22,7 @@ public class Bomb extends Enemy
     }
     
     /**
-     * Act - do whatever the Bomb wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * se manda llamar al metodo de quitaVida, cuando el nemigo haya tocado una bomba
      */
     public void act() 
     {

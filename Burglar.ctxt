@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Burglar()
-comment0.text=\r\n\ Constructor\ de\ la\ clase\ Burglar.\r\n\ Se\ crean\ las\ imagenes\ del\ ladron\ de\ todas\ las\ posiciones\ en\ las\ que\ puede\ estar.\r\n
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Burglar.\r\n\ Se\ crean\ las\ imagenes\ del\ ladron\ de\ todas\ las\ posiciones\ en\ las\ que\ puede\ estar.\r\n\ Se\ inicializan\ los\ puntos\ en\ cero\ y\ las\ vidas\ en\ tres.\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ En\ el\ m\u00E9todo\ act()\ ,\ se\ mandan\ llamar\ a\ los\ m\u00E9todos\ que\ contiene\ el\ movimiento\ del\ ladron,\ \r\n\ validaciones\ para\ que\ no\ se\ salga\ del\ escenario\ y\ se\ acumulan\ los\ puntos\r\n
+comment1.text=\r\n\ En\ el\ m\u00E9todo\ act()\ ,\ se\ mandan\ llamar\ a\ los\ m\u00E9todos\ que\ contiene\ el\ movimiento\ del\ ladron,\ \r\n\ validaciones\ para\ que\ no\ se\ salga\ del\ escenario\ y\ el\ acumulador\ de\ los\ puntos\ cuando\ \r\n\ el\ ladron\ toque\ algun\ billete\r\n
 comment2.params=
 comment2.target=void\ move()
-comment2.text=\r\n\ \u00C9ste\ m\u00E9todo\ contiene\ el\ movimiento\ del\ personaje\ (arriba,abajo,izquierda,derecha)\ y\ se\ cambia\ la\r\n\ direcci\u00F3n\ seg\u00FAn\ la\ tecla\ que\ se\ presione.\r\n
+comment2.text=\r\n\ \u00C9ste\ m\u00E9todo\ contiene\ el\ movimiento\ del\ personaje\ (arriba,abajo,izquierda,derecha)\ y\ se\ cambia\ la\r\n\ direcci\u00F3n\ seg\u00FAn\ la\ tecla\ que\ se\ presione.\r\n\ Cuando\ se\ presiona\ una\ tecla\ la\ variable\ parado\ es\ false,\ de\ \ lo\ contrario\ dicha\ variable\ \r\n\ sigue\ siendo\ true.\r\n
 comment3.params=
 comment3.target=void\ caminar()
 comment3.text=\r\n\ Contiene\ los\ pasos\ que\ dar\u00E1\ el\ ladr\u00F3n,\ cada\ vez\ que\ de\ tres\ pasos\ se\ reinicia\ la\ variable.\ Se\ manda\r\n\ llamar\ al\ m\u00E9todo\ avanzaLadron()\ para\ que\ cambie\ la\ imagen\ segun\ los\ pasos\ que\ camine.\r\n

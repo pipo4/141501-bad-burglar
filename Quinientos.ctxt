@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Quinientos()
-comment0.text=\r\n\ Constructor\ de\ la\ clase\ Quinientos\ \r\n\ Se\ crea\ la\ imagen\ del\ billete.\r\n
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Quinientos\ \r\n\ Se\ crea\ la\ imagen\ del\ billete\ y\ se\ asigna\ el\ valor\ a\ 500.\r\n
 comment1.params=
 comment1.target=void\ acumulaPuntos()
 comment1.text=\r\n\ Este\ metodo\ acumula\ los\ puntos\ del\ ladron\ segun\ el\ valor\ del\ billete\r\n\ \r\n

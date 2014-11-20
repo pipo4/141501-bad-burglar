@@ -1,8 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * La clase BurglarWorld va a contener el escenario del juego y también donde se controlarán los niveles del 
- * juego. Esto incluye creación de personajes u objetos y su movimiento(si es que lo tiene)
+ * La clase BurglarWorld va a contener el escenario del juego y también donde se controlarán los niveles.
+ * Esto incluye creación de personajes u objetos y su movimiento(si es que lo tiene).
+ * También incluye los métodos de acceso para algunos actores
  * 
  * @author (Cerda Varela Ignacio) 
  * @version (2014.11.19)
@@ -27,14 +28,14 @@ public class BurglarWorld extends World
     private static final int GIRA_0=0;
     /** Constante para girar 90 grados el bloque de la clase Lines y ponerlo en el escenario para el laberinto*/
     private static final int GIRA_90=90;
-    /**Constante entera que contiene el color para dibujar el escenario*/
+    /**Constante entera que contiene el color para dibujar el escenario en el nivel 1*/
     private static final int AZUL=0;
    
     private GreenfootSound mision;
     private GreenfootSound alarmSystem;
     /**
-     * Constructor de la clase BurglarWorld.
-     * Se crean los mensajes de puntos y vidas
+     * Constructor de la clase BurglarWorld. Se crea el escenario y los actores del primer nivel
+     * Se crean los mensajes de puntos y vidas. También se crean los sonidos del juego.
      * 
      */
     public BurglarWorld()
@@ -56,7 +57,7 @@ public class BurglarWorld extends World
     }
 
     /**
-     * El método prepare dibuja el escenario, crea los personajes y los agrega al mundo BurglarWorld
+     * El método prepare dibuja el escenario, crea los personajes del primer nivel y los agrega al mundo BurglarWorld
      */
     private void prepare()
     {
@@ -88,7 +89,9 @@ public class BurglarWorld extends World
     
     /**
      *  Asinga los puntos que tenga el ladron para que puedan ser mostrados en el mensaje de puntos y se 
-     *  checa si las vidas se agotaron, en este caso , el juego  termina
+     *  checa si las vidas se agotaron, en este caso , el juego  termina. 
+     *  Cuando se activa la alarma del ultimo nivel, el sonido de fondo del juego baja de volumen y una alarma
+     *  empieza a sonar
      */
     public void act()
     {
@@ -112,8 +115,8 @@ public class BurglarWorld extends World
     }
     
     /**
-     * Dibuja el escenario con ayuda de la clase Lines, que dibuja 
-     * una barra de color azul con una dirección, y los agrega 
+     * Dibuja el escenario con ayuda de la clase Lines, que permite dibujar 
+     * una barra de color azul(para el primer nivel) con una dirección, y los agrega 
      * al mundo
      */
      
@@ -167,8 +170,8 @@ public class BurglarWorld extends World
     }
     
     /**
-     * Método que verifica el número de objetos en BurglarWorld para cambiar de nivel, agregando
-     * como enemigos a unas esposas y un gas pimineta
+     * Método que cambia al segundo nivel , se cambia el fondo y el color del laberinto. Se eliminan los actores
+     * del nivel anterior y se agregan los nuevos enemigos de este nivel
      */
     public void cambiaNivel1()
     {
@@ -201,7 +204,8 @@ public class BurglarWorld extends World
     }
     
      /**
-     * método que verifica el número de objetos en BurglarWorld para cambiar de nivel
+     * Método que cambia al tercer nivel, cambiando el fondo y el color del laberinto y agregando
+     * los enemigos de este nivel
      */
     public void cambiaNivel2()
     {
