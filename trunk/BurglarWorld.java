@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * juego. Esto incluye creación de personajes u objetos y su movimiento(si es que lo tiene)
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.16)
+ * @version (2014.11.19)
  */
 public class BurglarWorld extends World
 {
@@ -31,7 +31,7 @@ public class BurglarWorld extends World
     private static final int AZUL=0;
    
     private GreenfootSound mision;
-   
+    private GreenfootSound alarmSystem;
     /**
      * Constructor de la clase BurglarWorld.
      * Se crean los mensajes de puntos y vidas
@@ -41,6 +41,7 @@ public class BurglarWorld extends World
     {    
         super(1000, 600, 1); 
         reloj=new SimpleTimer();
+        reloj.mark();
         this.setPaintOrder(Burglar.class,Policeman.class,Patrol.class);
         prepare();
         mensajeVidas=new Counter("Vidas: "); 
@@ -50,7 +51,8 @@ public class BurglarWorld extends World
         mensajePuntos.setValue(0);
         addObject(mensajePuntos,58,55);
         mision=new GreenfootSound("mision imposible.mp3");
-        mision.playLoop();
+        
+        alarmSystem=new GreenfootSound("Alarma Efecto de Sonido.mp3");
     }
 
     /**
@@ -85,18 +87,28 @@ public class BurglarWorld extends World
     }
     
     /**
-     *  Asinga los puntos que tenga el ladron para que puedan ser mostrados en el mensaje de puntos.
+     *  Asinga los puntos que tenga el ladron para que puedan ser mostrados en el mensaje de puntos y se 
+     *  checa si las vidas se agotaron, en este caso , el juego  termina
      */
     public void act()
     {
-       
+       mision.playLoop();
        mensajePuntos.setValue(burglar.getPuntos());
-      
-       //mision.play();
+       gameOver();
        
-       //mision.stop();
-       
-       
+       if(burglar.getNivel()==3){
+          
+           alarmSystem.playLoop();
+           mision.setVolume(30);
+           alarmSystem.setVolume(70);
+           if(burglar.getPuntos()>2400){
+               Greenfoot.stop();
+            }
+           
+          /*  if(reloj.millisElapsed()>5000){
+                Greenfoot.stop();
+            }*/
+        }
     }
     
     /**
@@ -204,7 +216,7 @@ public class BurglarWorld extends World
            burglar.setLocation(954, 172);
            
            bomba=new Bomb();
-           addObject(bomba,140,135);
+           addObject(bomba,180,150);
            addObject(new Bomb(),320,300);
            
            alarma= new Alarm(); 
@@ -290,7 +302,7 @@ public class BurglarWorld extends World
     }
     
     /**
-     * Método que regresa a un enemigo del juegp, en este caso un policia
+     * Método que regresa a un enemigo del juego, en este caso un policia
      * @return police enemigo de la subclase Policeman
      */
     public Policeman getPolice()
@@ -307,11 +319,7 @@ public class BurglarWorld extends World
         return reloj;
     }
     
-    public void restaVidas()
-    {
-        mensajeVidas.add(-1);
-    }
-    
+   
     /**
      * Método que es llamado por el sistema de Greenfoot cuando se ha iniciado la simulación, y
      * empieza iniciando el sonido del juego
@@ -320,6 +328,7 @@ public class BurglarWorld extends World
     {
         super.started();
         mision.play();
+        
     }
     
     /**
@@ -330,8 +339,25 @@ public class BurglarWorld extends World
     {
         super.stopped();
         mision.pause();
+        alarmSystem.pause();
     }
     
-   
+    /**
+     * Método que checa la vidas del jugador, y si estas son igual a cero cambia el fondo, elimina 
+     * todos los objetos de Burglar World y aparece un mensaje indicando que el juego termino
+     */
+    public void gameOver()
+    {
+         if(mensajeVidas.getValue()==0){
+           removeObjects(getObjects(Actor.class));
+           GreenfootImage fondofinal = new GreenfootImage("images (17).jpg");
+           fondofinal.setTransparency(220);
+           setBackground(fondofinal);
+           Letrero perdiste=new Letrero(" GAME OVER ");
+           addObject(perdiste,this.getWidth()/2,this.getHeight()/2);
+           
+           Greenfoot.stop();
+        }
+    }
    
 }

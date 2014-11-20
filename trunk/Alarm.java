@@ -10,7 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Alarm extends Enemy
 {
     private GreenfootImage alarma;
-    private GreenfootSound alarmSystem;
+   
     
     /**
      * Constructor de la clase Alarm. Crea la imagen de una alarma por medio de 
@@ -22,7 +22,7 @@ public class Alarm extends Enemy
         alarma.scale(alarma.getWidth()/3, alarma.getHeight()/3);
         alarma.setTransparency(50);
         setImage(alarma);
-        alarmSystem=new GreenfootSound("Alarma Efecto de Sonido.mp3");
+        
     }
     
     /**
@@ -33,12 +33,12 @@ public class Alarm extends Enemy
     {
         if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 3){
             alarma.setTransparency(250);
-            alarmSystem.play();
+            /*alarmSystem.play();
             ((BurglarWorld)(getWorld())).getReloj().mark();
             if(((BurglarWorld)(getWorld())).getReloj().millisElapsed()>=2000){
                 alarmSystem.stop();
             }
-           /* if(((BurglarWorld)(getWorld())).getBurglar().getPuntos()>= 2200 ){
+            if(((BurglarWorld)(getWorld())).getBurglar().getPuntos()>= 2200 ){
                  alarmSystem.stop();
             }*/
         }

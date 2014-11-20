@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * imagen del personaje que va a tener vidas y puntos , asi como movimiento del ladrón en el escenario
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.16) 
+ * @version (2014.11.19) 
  */
 public class Burglar extends Actor
 {
@@ -38,8 +38,7 @@ public class Burglar extends Actor
     /**variable booleana que con un true indica que el personaje esta parado, con un false indica que el personaje esta caminando*/
     private boolean parado;
     private int nivel;
-    private boolean intersecta;
-    
+   
     /**
      * Constructor de la clase Burglar.
      * Se crean las imagenes del ladron de todas las posiciones en las que puede estar.
@@ -80,7 +79,7 @@ public class Burglar extends Actor
         direccion=IZQUIERDA;
         parado=true;
         nivel=0;
-        intersecta=false;
+       
     }
     
     /**
@@ -112,7 +111,7 @@ public class Burglar extends Actor
          ((BurglarWorld)(getWorld())).getQuinientos().acumulaPuntos();
           removeTouching(Quinientos.class);
          
-        }
+         }
         
          if(isTouching(Veinte.class)){
          ((BurglarWorld)(getWorld())).getVeinte().acumulaPuntos(); 
@@ -127,14 +126,16 @@ public class Burglar extends Actor
         }
         
       
-       if(puntos>=650 && getX()<=115 && getY()>=440 && nivel==0){  
+       if(puntos>=720 && getX()<=115 && getY()>=440 && nivel==0){  
            nivel=1;
            ((BurglarWorld)(getWorld())).cambiaNivel1();
+           
         }
         
        if(puntos>=1500 && getY()>=540 && getX()>=225 && nivel==1){
            nivel=2;
            ((BurglarWorld)(getWorld())).cambiaNivel2();
+          
         }
         
        if(puntos>=1900){
@@ -179,10 +180,7 @@ public class Burglar extends Actor
      else{
          parado=true;
         }
-        
-     /*if(isTouching(Policeman.class)){
-             ((BurglarWorld)(getWorld())).getPolice().quitaPuntos();
-        }*/
+     
     }
     
     /**
@@ -195,7 +193,7 @@ public class Burglar extends Actor
         if(avanza>=3){
             avanza=0;
         }
-        avanzaLadron();
+        avanzaLadron(); 
     }
     
     /**
