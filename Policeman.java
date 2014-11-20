@@ -86,8 +86,7 @@ public class Policeman extends Enemy
          camina();
             
         super.quitaPuntos();
-         
-       
+        
    }    
     
    /**
