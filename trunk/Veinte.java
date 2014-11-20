@@ -11,7 +11,7 @@ public class Veinte extends Money
     private int valor;
     /**
      * Constructor de la clase Cien.
-     * Se crea la imagen del billete 
+     * Se crea la imagen del billete y se asigna su valor a 20.
      */
      public Veinte()
     {

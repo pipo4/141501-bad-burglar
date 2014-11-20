@@ -8,9 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
+    /**
+     * variable booleana que con un false indica que un eemigo no ha tocado al ladron
+     */
     private boolean intersecta=false;
     
-    
+    /**
+     * Método que quita una vida al jugador en caso de que el enemigo llegue a tocarlo, se hacen las validaciones
+     * con la variable intersecta, si el enemigo toco al ladron , esta variable pasa a ser true, de lo contario es false
+     */
     public void quitaVida()
     {
         if(isTouching(Burglar.class) && intersecta==false &&((BurglarWorld)(getWorld())).getMensajeVidas().getValue()>0){
@@ -28,6 +34,7 @@ public class Enemy extends Actor
     
      /**
      * El método quitaPuntos() verifica si un objeto de la clase Policeman toca al ladron, se tendrá que quitar puntos
+     * haciendo validaciones con la variable intersecta, si el enemigo toco al ladron , esta variable pasa a ser true, de lo contario es false
      */
      public void quitaPuntos()
     {

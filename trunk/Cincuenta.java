@@ -11,7 +11,7 @@ public class Cincuenta extends Money
     private int valor;
     /**
      * Constructor de la clase Cincuenta 
-     * Se crea la imagen del billete.
+     * Se crea la imagen del billete y se asigna el valor de 50.
      */
     public Cincuenta()
     {
@@ -23,11 +23,7 @@ public class Cincuenta extends Money
         
     }
      
-    public void act()
-    {
-        
-    }
-    
+  
     /**
      * Este metodo acumula los puntos del ladrón según sea el valor del billete
      * 

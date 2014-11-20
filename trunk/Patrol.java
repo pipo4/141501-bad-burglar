@@ -18,7 +18,7 @@ public class Patrol extends Enemy
     
     /**
      * Constructor de la clase Patrol
-     * se crea la imagen de la patrulla 
+     * se crea la imagen de la patrulla con dirección hacia la izquierda
      */
     public Patrol()
     {
@@ -28,7 +28,8 @@ public class Patrol extends Enemy
         direccion=IZQUIERDA;
     }
     /**
-     * El método act() manda llamar a los métodos de la clase Patrol
+     * El método act() manda llamar a los métodos de la clase Patrol, que serán los 
+     * del movimiento de la patrulla y cuando se vaya a quitar puntos
      */
     public void act() 
     {
@@ -39,7 +40,8 @@ public class Patrol extends Enemy
     }    
     
     /**
-     * El método move() permite realizar el movimiento de la patrulla
+     * El método move() permite realizar el movimiento de la patrulla, cambiando de direccion cuando
+     * se llegue a un limite
      */
     public void move()
     {

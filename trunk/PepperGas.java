@@ -32,7 +32,7 @@ public class PepperGas extends Enemy
     }
     
     /**
-     * El método actua permite hacer el movimiento del enemigo
+     * El método actua permite hacer el movimiento del enemigo, cambiando de direccion cuando se llegue a un limite
      */
     public void act() 
     {

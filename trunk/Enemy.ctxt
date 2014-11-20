@@ -1,7 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ quitaVida()
+comment0.text=\r\n\ M\u00E9todo\ que\ quita\ una\ vida\ al\ jugador\ en\ caso\ de\ que\ el\ enemigo\ llegue\ a\ tocarlo,\ se\ hacen\ las\ validaciones\r\n\ con\ la\ variable\ intersecta,\ si\ el\ enemigo\ toco\ al\ ladron\ ,\ esta\ variable\ pasa\ a\ ser\ true,\ de\ lo\ contario\ es\ false\r\n
 comment1.params=
 comment1.target=void\ quitaPuntos()
-comment1.text=\r\n\ El\ m\u00E9todo\ quitaPuntos()\ verifica\ si\ un\ objeto\ de\ la\ clase\ Policeman\ toca\ al\ ladron,\ se\ tendr\u00E1\ que\ quitar\ puntos\r\n
+comment1.text=\r\n\ El\ m\u00E9todo\ quitaPuntos()\ verifica\ si\ un\ objeto\ de\ la\ clase\ Policeman\ toca\ al\ ladron,\ se\ tendr\u00E1\ que\ quitar\ puntos\r\n\ haciendo\ validaciones\ con\ la\ variable\ intersecta,\ si\ el\ enemigo\ toco\ al\ ladron\ ,\ esta\ variable\ pasa\ a\ ser\ true,\ de\ lo\ contario\ es\ false\r\n
 numComments=2

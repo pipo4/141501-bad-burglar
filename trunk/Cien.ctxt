@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Cien()
-comment0.text=\r\n\ Constructor\ de\ la\ clase\ Cien.\r\n\ Se\ crea\ la\ imagen\ del\ billete\ \r\n
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Cien.\r\n\ Se\ crea\ la\ imagen\ del\ billete\ y\ se\ asigna\ el\ valor\ a\ 100.\r\n
 comment1.params=
 comment1.target=void\ acumulaPuntos()
 comment1.text=\r\n\ Este\ metodo\ va\ acumulando\ los\ puntos\ que\ lleva\ el\ ladron\ segun\ sea\ el\ valor\ del\ billete\r\n\ \r\n

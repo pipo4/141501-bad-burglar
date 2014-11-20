@@ -11,7 +11,7 @@ public class Quinientos extends Money
     private int valor;
     /**
      * Constructor de la clase Quinientos 
-     * Se crea la imagen del billete.
+     * Se crea la imagen del billete y se asigna el valor a 500.
      */
      public Quinientos()
     {
