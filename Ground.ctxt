@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Ground()
+comment0.text=\r\n\ constructor\ de\ la\ clase\ ground\ que\ crea\ una\ imagen\ de\ greenfootImage\ para\r\n\ representar\ la\ meta\ a\ la\ que\ tiene\ que\ llegar\ el\ jugador\r\n
+numComments=1

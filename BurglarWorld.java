@@ -96,21 +96,17 @@ public class BurglarWorld extends World
     public void act()
     {
        mision.playLoop();
+       
        mensajePuntos.setValue(burglar.getPuntos());
        gameOver();
-       
+       //ganaste(); 
        if(burglar.getNivel()==3){
           
            alarmSystem.playLoop();
            mision.setVolume(30);
            alarmSystem.setVolume(70);
-           if(burglar.getPuntos()>2400){
-               Greenfoot.stop();
-            }
+          
            
-          /*  if(reloj.millisElapsed()>5000){
-                Greenfoot.stop();
-            }*/
         }
     }
     
@@ -209,7 +205,7 @@ public class BurglarWorld extends World
      */
     public void cambiaNivel2()
     {
-        
+           reloj.mark();
            GreenfootImage fondoNivel2=new GreenfootImage("images (15).jpg");
            fondoNivel2.scale(fondoNivel2.getWidth(), fondoNivel2.getHeight()); 
            fondoNivel2.setTransparency(190);
@@ -224,7 +220,7 @@ public class BurglarWorld extends World
            addObject(new Bomb(),320,300);
            
            alarma= new Alarm(); 
-           addObject(alarma,100,550);
+           addObject(alarma,80,550);
            
            
            addObject(doscientos,580,420);
@@ -232,6 +228,9 @@ public class BurglarWorld extends World
            addObject(quinientos,300,330);
            addObject(cien,830,50);
            addObject(veinte,790,460);
+           
+           Ground ground=new Ground();
+           addObject(ground,220,560);
     }
    
     /**
@@ -358,6 +357,25 @@ public class BurglarWorld extends World
            fondofinal.setTransparency(220);
            setBackground(fondofinal);
            Letrero perdiste=new Letrero(" GAME OVER ");
+           addObject(perdiste,this.getWidth()/2,this.getHeight()/2);
+           
+           //addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2); 
+             
+           Greenfoot.stop();
+        }
+    }
+    
+    /**
+     * Método que nos muestra un mensaje indicando que se ha ganado el juego
+     */
+    public void ganaste()
+    {
+         if(burglar.getPuntos()>2300){
+           removeObjects(getObjects(Actor.class));
+           GreenfootImage fondofinal = new GreenfootImage("images (17).jpg");
+           fondofinal.setTransparency(220);
+           setBackground(fondofinal);
+           Letrero perdiste=new Letrero(" GANASTE ");
            addObject(perdiste,this.getWidth()/2,this.getHeight()/2);
            
            Greenfoot.stop();

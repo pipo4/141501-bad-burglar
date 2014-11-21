@@ -33,14 +33,8 @@ public class Alarm extends Enemy
     {
         if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 3){
             alarma.setTransparency(250);
-            /*alarmSystem.play();
-            ((BurglarWorld)(getWorld())).getReloj().mark();
-            if(((BurglarWorld)(getWorld())).getReloj().millisElapsed()>=2000){
-                alarmSystem.stop();
-            }
-            if(((BurglarWorld)(getWorld())).getBurglar().getPuntos()>= 2200 ){
-                 alarmSystem.stop();
-            }*/
+            
+            
         }
         
     }    
