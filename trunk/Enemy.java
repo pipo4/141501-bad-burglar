@@ -49,7 +49,7 @@ public class Enemy extends Actor
             
         }
         
-        if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==1 || ((BurglarWorld)(getWorld())).getBurglar().getNivel()==2){
+        if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==1 || ((BurglarWorld)(getWorld())).getBurglar().getNivel()==2 || ((BurglarWorld)(getWorld())).getBurglar().getNivel()==0){
             intersecta=false;
             if(isTouching(Burglar.class)&&intersecta==false){
                 intersecta=true;

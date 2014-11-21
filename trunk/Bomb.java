@@ -9,16 +9,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bomb extends Enemy
 {
-    private GreenfootImage bomba;
+    private GreenfootImage bomba0;
     
     /**
      * Constructor de la clase Bomb. Crea al enemigo con una imagen de GreenfootImage
      */
     public Bomb()
     {
-        bomba= new GreenfootImage("bomb.png");
-        bomba.scale(bomba.getWidth()/2, bomba.getHeight()/2);
-        setImage(bomba);
+        bomba0= new GreenfootImage("bomb.png");
+        bomba0.scale(bomba0.getWidth()/2, bomba0.getHeight()/2);
+        
+        setImage(bomba0);
     }
     
     /**
@@ -26,7 +27,8 @@ public class Bomb extends Enemy
      */
     public void act() 
     {
-        super.quitaVida();
+         
+       super.quitaVida();
     }    
     
     

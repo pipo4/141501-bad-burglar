@@ -21,6 +21,7 @@ public class Burglar extends Actor
     private GreenfootImage ladronderecha1;
     private GreenfootImage ladronderecha2;
     private GreenfootImage ladronderecha3;
+    private GreenfootImage ladronatras;
     /**Variable para acumular los puntos que lleva el ladrón*/
     private int puntos;
     /**Variable que contiene las vidas que tiene el jugador*/
@@ -75,6 +76,9 @@ public class Burglar extends Actor
         
         ladronderecha3=new GreenfootImage("ladronder3.png"); 
         ladronderecha3.scale( ladronderecha3.getWidth()/2,ladronderecha3.getHeight()/2); 
+        
+        ladronatras=new GreenfootImage("ladronatras.png"); 
+        ladronatras.scale( ladronatras.getWidth()/2,ladronatras.getHeight()/2); 
         
         setImage(ladron);
         puntos=0;
@@ -131,24 +135,26 @@ public class Burglar extends Actor
         }
         
       
-       if(puntos>=720 && getX()<=115 && getY()>=440 && nivel==0){  
+       if(puntos>=640 && getX()<=115 && getY()>=440 && nivel==0){  
            nivel=1;
            ((BurglarWorld)(getWorld())).cambiaNivel1();
            
         }
         
-       if(puntos>=1500 && getY()>=540 && getX()>=225 && nivel==1){
+       if(puntos>=1440 && getY()>=540 && getX()>=225 && nivel==1){
            nivel=2;
            ((BurglarWorld)(getWorld())).cambiaNivel2();
           
         }
         
-       if(puntos>=1900){
+       if(puntos>=1750){//2450
            nivel=3;
-          
+           
         }
         
-       
+       if(this.isTouching(Ground.class) && getY()>=540 && puntos>2390){
+           ((BurglarWorld)(getWorld())).ganaste();
+        }
       
     }   
     
@@ -220,8 +226,8 @@ public class Burglar extends Actor
         }
         
         if(parado==false){
-         switch(avanza){
-            case 0: if(this.direccion==IZQUIERDA){
+         switch(avanza){ 
+             case 0: if(this.direccion==IZQUIERDA){
                      ladron=ladronizquierda1;
                     }
                     else{
@@ -230,7 +236,8 @@ public class Burglar extends Actor
                         }
                         
                     }
-            break;
+                   
+            break;  
             
             case 1: if(this.direccion==IZQUIERDA){
                      ladron=ladronizquierda2;
@@ -239,8 +246,11 @@ public class Burglar extends Actor
                         if(this.direccion==DERECHA){
                           ladron=ladronderecha2;
                         }  
+                         
+                            
+                        
                     }
-                
+                  
             break;
             
             case 2: if(this.direccion==IZQUIERDA){
