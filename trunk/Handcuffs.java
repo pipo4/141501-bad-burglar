@@ -34,26 +34,15 @@ public class Handcuffs extends Enemy
      */
     public void act()
     {
-        if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==1){
+       
+        if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==1 || ((BurglarWorld)(getWorld())).getBurglar().getNivel()==2){//1
           this.setLocation(getX(), getY()+direccion);
-            if(getY()>=305){ 
-              this.direccion=ARRIBA; 
-            }
-             if(getY()<=130){
-               this.direccion=ABAJO;
-             }
-           
-        }
-        
-         if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==2 || ((BurglarWorld)(getWorld())).getBurglar().getNivel()==3){
-          this.setLocation(getX()+direccion, getY()+direccion);
-            if(getY()>=270){ 
-              this.direccion=ARRIBA; 
-             }
-             if(getY()<=130){
-               this.direccion=ABAJO;
-             }
           
+           if(this.isAtEdge() || this.isTouching(Lines.class)){
+               esposas.setTransparency(0);
+            }
+              
+           
         }
         
        this.turn(direccion*2);

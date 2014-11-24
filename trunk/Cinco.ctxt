@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Cinco()
+comment0.text=\r\n\ constructor\ de\ la\ clase\ Cinco,\ que\ crea\ por\ medio\ de\ una\ imagen\ de\ GreenfootImage\ una\r\n\ moneda\ de\ 5\ pesos\r\n
+comment1.params=
+comment1.target=void\ acumulaPuntos()
+comment1.text=\r\n\ Este\ metodo\ va\ acumulando\ los\ puntos\ que\ lleva\ el\ jugador\ cuando\ recoge\ dinero\r\n\ \r\n
+numComments=2

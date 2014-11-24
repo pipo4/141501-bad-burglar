@@ -12,7 +12,7 @@ public class Lines extends Actor
     private GreenfootImage imagen;
     /**
      * Constructor de la clase Lines, recibe una direccion para girar la barra y colocarla
-     * en el escenario
+     * en el escenario.
      * @param  dir direccion en la que se quiere colocar la barra para dibujar el laberinto
      *
      */

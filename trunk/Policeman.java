@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * La clase Policeman es un enemigo del juego que va a tener movimiento en el escenario, tratando de atrapar al ladron.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.16)
+ * @version (2014.11.22)
  */
 public class Policeman extends Enemy
 {
@@ -22,10 +22,7 @@ public class Policeman extends Enemy
    private int avanza;
    /**Variable que contiene a la dirección que lleva el policia, puede ser izquierda o derecha.*/
    private int direccion;
-   /**Constante entera que representa la dirección hacia la derecha con un 1*/
-   private static final int DERECHA=1;
-   /**Constante entera que representa la dirección hacia la izquierda con un -1*/
-   private static final int IZQUIERDA=-1;
+   private Handcuffs esposas;
     /**
      * Constructor de la clase Policeman : se crea el personjae con una imagen de Greenfoot
      */
@@ -54,6 +51,7 @@ public class Policeman extends Enemy
        
         setImage(police); 
         direccion=DERECHA;
+        
     }
     
      /**
@@ -76,17 +74,34 @@ public class Policeman extends Enemy
         
          if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 1){
            
-           if(getX()>=310){
+           if(getX()>=830 || isTouching(Lines.class)){
                this.direccion=IZQUIERDA;
             }
-            if(getX()<=145){
+            if(getX()<=200){
                 this.direccion=DERECHA;
             }
+            
+             if(getX()==720 || getX()==350 || getX()==485 || getX()==810 || getX()==550){
+           esposas=new Handcuffs();
+           getWorld().addObject(esposas, getX(), getY()); 
+          }
+            
+          if(getX()==220 || getX()==630){
+              PepperGas gas=new PepperGas();
+              getWorld().addObject(gas,getX(),getY());
+            }
         }
+        
+        if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 2){
+            getWorld().removeObject(esposas);
+        }
+        
          camina();
             
         super.quitaPuntos();
         
+       
+      
    }    
     
    /**
@@ -101,6 +116,8 @@ public class Policeman extends Enemy
            avanza=0;
         }
            move();
+           
+       
         
    }
    

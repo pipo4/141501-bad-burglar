@@ -13,7 +13,7 @@ public class PepperGas extends Enemy
      /**Constante que representa la direccion hacia izquierda del enemigo con valor de -2*/
     private static final int IZQUIERDA=-2;
      /**Constante que representa la direccion hacia derecha del enemigo con valor de 2*/
-    private static final int DERECHA=2;
+    private static final int ABAJO=2;
     /**Variable entera que contiene la direccion de las esposas*/
     private int direccion;
     
@@ -27,7 +27,7 @@ public class PepperGas extends Enemy
         gas=new GreenfootImage("gas.png"); 
         gas.scale(gas.getWidth()/5,gas.getHeight()/5);
         setImage(gas);
-        direccion=IZQUIERDA;
+        direccion=ABAJO;
         
     }
     
@@ -36,13 +36,11 @@ public class PepperGas extends Enemy
      */
     public void act() 
     {
-        this.setLocation(getX()+direccion, getY());
-            if(getX()>=450){ 
-              this.direccion=IZQUIERDA; 
-             }
-             if(getX()<=150){
-               this.direccion=DERECHA;
-             }
+        this.setLocation(getX(), getY()+direccion);
+            
+        if(this.isAtEdge() || this.isTouching(Lines.class)){
+               gas.setTransparency(0);
+            }
        this.turn(direccion-2);
        
        super.quitaVida();

@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * La clase Patrol es un enemigo del juego que andará tratanto de atrapar al ladron.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.11)
+ * @version (2014.11.22)
  */
 public class Patrol extends Enemy
 {
@@ -24,6 +24,7 @@ public class Patrol extends Enemy
     {
         patrulla=new GreenfootImage("patrulla1.png");
         patrulla.scale(patrulla.getWidth()/4,patrulla.getHeight()/4);
+        
         setImage(patrulla);
         direccion=IZQUIERDA;
     }
@@ -37,6 +38,7 @@ public class Patrol extends Enemy
          
         move();
         super.quitaPuntos();
+       
     }    
     
     /**
@@ -46,7 +48,7 @@ public class Patrol extends Enemy
     public void move()
     {
         this.setLocation(getX()+direccion,getY());
-         //if(((BurglarWorld)(getWorld())).getNivel() == 0){
+         
            if(getX()<=180){
                this.direccion=DERECHA;
                patrulla.mirrorHorizontally(); 
@@ -55,7 +57,9 @@ public class Patrol extends Enemy
                this.direccion=IZQUIERDA;
                patrulla.mirrorHorizontally(); 
             }
-       // }
+        
+        
+       
     }
    
 }

@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=dir
 comment0.target=Lines(int)
-comment0.text=\r\n\ Constructor\ de\ la\ clase\ Lines,\ recibe\ una\ direccion\ para\ girar\ la\ barra\ y\ colocarla\r\n\ en\ el\ escenario\r\n\ @param\ \ dir\ direccion\ en\ la\ que\ se\ quiere\ colocar\ la\ barra\ para\ dibujar\ el\ laberinto\r\n\r\n
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Lines,\ recibe\ una\ direccion\ para\ girar\ la\ barra\ y\ colocarla\r\n\ en\ el\ escenario.\r\n\ @param\ \ dir\ direccion\ en\ la\ que\ se\ quiere\ colocar\ la\ barra\ para\ dibujar\ el\ laberinto\r\n\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ \u00C9ste\ m\u00E9todo\ verifica\ las\ coordenadas\ del\ ladron\ para\ cambiar\ de\ color\ el\ escenario,\ \r\n\ lo\ que\ significa\ un\ cambio\ de\ nivel.\r\n

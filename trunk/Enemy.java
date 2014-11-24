@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
+    /**Constante entera que representa la dirección hacia la derecha con un 1*/
+   public static final int DERECHA=1;
+   /**Constante entera que representa la dirección hacia la izquierda con un -1*/
+   public static final int IZQUIERDA=-1;
     /**
      * variable booleana que con un false indica que un eemigo no ha tocado al ladron
      */

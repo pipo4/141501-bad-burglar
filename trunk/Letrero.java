@@ -33,6 +33,5 @@ public class Letrero extends Actor
         letrero= new GreenfootImage(unaCadena,70,java.awt.Color.white,java.awt.Color.green);
         setImage(letrero);
     }
-     
-   
+    
 }

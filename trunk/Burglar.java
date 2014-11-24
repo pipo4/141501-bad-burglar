@@ -21,7 +21,7 @@ public class Burglar extends Actor
     private GreenfootImage ladronderecha1;
     private GreenfootImage ladronderecha2;
     private GreenfootImage ladronderecha3;
-    private GreenfootImage ladronatras;
+   
     /**Variable para acumular los puntos que lleva el ladrón*/
     private int puntos;
     /**Variable que contiene las vidas que tiene el jugador*/
@@ -77,9 +77,6 @@ public class Burglar extends Actor
         ladronderecha3=new GreenfootImage("ladronder3.png"); 
         ladronderecha3.scale( ladronderecha3.getWidth()/2,ladronderecha3.getHeight()/2); 
         
-        ladronatras=new GreenfootImage("ladronatras.png"); 
-        ladronatras.scale( ladronatras.getWidth()/2,ladronatras.getHeight()/2); 
-        
         setImage(ladron);
         puntos=0;
         vidas=3;
@@ -103,6 +100,18 @@ public class Burglar extends Actor
         caminar();
         validaciones();
        
+        verificaDinero();
+     
+        cambiaDeNivel();
+      
+    }   
+    
+    /**
+     * Éste método va checando si el jugador toco dinero, ya sea algun billete o una moneda,
+     * para que acumule puntos y elimine el dinero del escenario
+     */
+    public void verificaDinero()
+    {
         if(isTouching(Cincuenta.class)){
          ((BurglarWorld)(getWorld())).getCincuenta().acumulaPuntos(); 
          
@@ -134,30 +143,50 @@ public class Burglar extends Actor
          
         }
         
-      
-       if(puntos>=640 && getX()<=115 && getY()>=440 && nivel==0){  
+        if(isTouching(Diez.class)){
+            ((BurglarWorld)(getWorld())).getMoneda10().acumulaPuntos();
+            removeTouching(Diez.class);
+            }
+            
+        if(isTouching(Cinco.class)){
+            ((BurglarWorld)(getWorld())).getMoneda5().acumulaPuntos();
+            removeTouching(Cinco.class);
+            }
+            
+        if(isTouching(Uno.class)){
+            ((BurglarWorld)(getWorld())).getMoneda1().acumulaPuntos();
+            removeTouching(Uno.class);
+            }
+            
+           
+    }
+    
+    /**
+     * Este método verifica la cantidad de dinero que lleva el jugador para poder pasar de nivel
+     */
+    public void cambiaDeNivel()
+    {
+         if(puntos>=690 && getX()<=115 && getY()>=440 && nivel==0){  
            nivel=1;
            ((BurglarWorld)(getWorld())).cambiaNivel1();
            
         }
         
-       if(puntos>=1440 && getY()>=540 && getX()>=225 && nivel==1){
+       if(puntos>=1500 && getY()>=540 && getX()>=225 && nivel==1){
            nivel=2;
            ((BurglarWorld)(getWorld())).cambiaNivel2();
           
         }
         
-       if(puntos>=1750){//2450
+       if(puntos>=1800){
            nivel=3;
            
         }
         
-       if(this.isTouching(Ground.class) && getY()>=540 && puntos>2390){
+       if(this.isTouching(Ground.class) && getY()>=540 && puntos>2420){
            ((BurglarWorld)(getWorld())).ganaste();
         }
-      
-    }   
-    
+    }
     
     
     /**
