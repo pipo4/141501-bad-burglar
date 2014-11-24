@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BurglarMenu()
+comment0.text=\r\n\ Constructor\ de\ BurglarMenu.\ Crea\ un\ nuevo\ mundo\ y\ los\ botones\ del\ men\u00FA\r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Invoca\ a\ los\ m\u00E9todos\ del\ BurglarMenu\r\n
+comment2.params=
+comment2.target=void\ verifica()
+comment2.text=\r\n\ El\ m\u00E9todo\ verifica\ checa\ los\ botones\ del\ men\u00FA\ ,\ y\ seg\u00FAn\ sea\ el\ bot\u00F3n\ presionado\ hace\ \r\n\ la\ acci\u00F3n\ indicada\r\n
+numComments=3

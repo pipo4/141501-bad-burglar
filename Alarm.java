@@ -10,7 +10,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Alarm extends Enemy
 {
     private GreenfootImage alarma;
-   
     
     /**
      * Constructor de la clase Alarm. Crea la imagen de una alarma por medio de 
@@ -32,9 +31,16 @@ public class Alarm extends Enemy
     public void act() 
     {
         if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 3){
+          
             alarma.setTransparency(250);
-            
-            
+            if(((BurglarWorld)(getWorld())).getContador().getValue()<=0){
+                ((BurglarWorld)(getWorld())).getMensajePuntos().setValue(0);
+                Greenfoot.delay(50);
+                 Letrero perdiste=new Letrero(" GAME OVER "); 
+                ((BurglarWorld)(getWorld())).addObject(perdiste,((BurglarWorld)(getWorld())).getWidth()/2,((BurglarWorld)(getWorld())).getHeight()/2);
+     
+                Greenfoot.stop();
+            }
         }
         
     }    

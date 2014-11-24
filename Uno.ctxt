@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Uno()
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ Uno\ que\ crea\ una\ moneda\ de\ GreenfootImage\ y\ se\ le\r\n\ asigna\ un\ valor\ de\ 1.\r\n
+comment1.params=
+comment1.target=void\ acumulaPuntos()
+comment1.text=\r\n\ Este\ metodo\ va\ acumulando\ los\ puntos\ que\ lleva\ el\ jugador\ cuando\ recoge\ dinero\r\n\ \r\n
+numComments=2

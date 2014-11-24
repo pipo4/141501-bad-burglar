@@ -10,7 +10,7 @@ public class Money extends Actor
 {
     
     /**
-     * Este metodo recibe como parametro un entero que se va a ir incrementando a los puntos del ladron
+     * Este metodo recibe como parametro un entero que va a ir incrementando a los puntos del ladron
      * @param unValor el valor que tenga un billete
      */
     public void acumulaPuntos(int unValor) 
@@ -19,4 +19,6 @@ public class Money extends Actor
         ((BurglarWorld)(getWorld())).getBurglar().setPuntos(unValor);
         
     }    
+    
+    
 } 

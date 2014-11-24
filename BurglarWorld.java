@@ -6,14 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * También incluye los métodos de acceso para algunos actores
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.19)
+ * @version (2014.11.23)
  */
 public class BurglarWorld extends World
 {
     private Burglar burglar;
-    private Counter mensajeVidas, mensajePuntos;
+    private Counter mensajeVidas, mensajePuntos, mensajeReloj,contador;
     private SimpleTimer reloj;
-    private Policeman police;
+    private Policeman police,police2;
     private Patrol patrulla;
     private Handcuffs esposas;
     private PepperGas gas;
@@ -24,6 +24,9 @@ public class BurglarWorld extends World
     private Quinientos quinientos;
     private Cien cien;
     private Veinte veinte;
+    private Uno moneda1;
+    private Cinco moneda5;
+    private Diez moneda10;
     /** Constante para girar 0 grados el bloque de la clase Lines y ponerlo en el escenario para el laberinto*/
     private static final int GIRA_0=0;
     /** Constante para girar 90 grados el bloque de la clase Lines y ponerlo en el escenario para el laberinto*/
@@ -50,7 +53,11 @@ public class BurglarWorld extends World
         addObject(mensajeVidas,52,20);
         mensajePuntos=new Counter("Dinero: ");
         mensajePuntos.setValue(0);
-        addObject(mensajePuntos,58,55);
+        addObject(mensajePuntos,170,20);
+        mensajeReloj=new Counter(" Tiempo: ");
+        addObject(mensajeReloj,110,56);
+        contador=new Counter(" Tiempo restante ");
+        contador.setValue(10);
         mision=new GreenfootSound("mision imposible.mp3");
         
         alarmSystem=new GreenfootSound("Alarma Efecto de Sonido.mp3");
@@ -70,7 +77,7 @@ public class BurglarWorld extends World
         addObject(police,655,160);
 
         cincuenta=new Cincuenta(); 
-        addObject(cincuenta,500,280); 
+        addObject(cincuenta,560,280); 
         
         veinte= new Veinte();
         addObject(veinte,800,200);
@@ -83,8 +90,17 @@ public class BurglarWorld extends World
 
         quinientos = new Quinientos();
         addObject(quinientos, 100, 450);
-         
         
+        moneda1=new Uno();
+        addObject(moneda1,830,500);
+        
+        moneda5=new Cinco();
+        addObject(moneda5,190,170);
+        
+        moneda10=new Diez();
+        addObject(moneda10,360,310);
+        
+        //addObject(new Bomb(),200,400);
     }
     
     /**
@@ -105,9 +121,20 @@ public class BurglarWorld extends World
            alarmSystem.playLoop();
            mision.setVolume(30);
            alarmSystem.setVolume(70);
-          
+           addObject(contador,getWidth()/2,570);
+           if(reloj.millisElapsed()>=1000){
+           reloj.mark();
+           contador.add(-1);
+          }
            
         }
+        
+       if(reloj.millisElapsed()>=1000){
+           reloj.mark();
+           mensajeReloj.add(1);
+        }
+        
+        
     }
     
     /**
@@ -177,25 +204,21 @@ public class BurglarWorld extends World
            setBackground(fondoNivel2); 
            
            burglar.setLocation(954, 172);
-           police.setLocation(300,400);
            removeObject(patrulla);
            
-           addObject(cincuenta,500,370);//450,300
-           addObject(veinte,680,200);
+           
+           addObject(cincuenta,540,320);//450,300
+           addObject(veinte,700,240);
            addObject(doscientos,230,550);//230,550
            addObject(quinientos,160,130);//160,130
+           addObject(moneda1,300,50);
+           addObject(moneda5,350,260);
+           addObject(moneda10,125,440);
+           police2=new Policeman();
+           addObject(police2,170,400);
            
            cien=new Cien();
            addObject(cien,780,450);//780,350
-           
-           esposas= new Handcuffs();
-           addObject(esposas,736,120);
-           Handcuffs esposas2=new Handcuffs();
-           addObject(esposas2,630,305);
-           
-           gas=new PepperGas();
-           addObject(gas,350,170);
-           
            
     }
     
@@ -211,16 +234,21 @@ public class BurglarWorld extends World
            fondoNivel2.setTransparency(190);
            setBackground(fondoNivel2); 
            removeObject(police);
-           removeObject(gas);
+           removeObject(police2);
+           removeObject(esposas);
            
            burglar.setLocation(954, 172);
            
            bomba=new Bomb();
-           addObject(bomba,180,150);
+           addObject(bomba,180,185);
            addObject(new Bomb(),320,300);
+           addObject(new Bomb(),485,155);
+           addObject(new Bomb(),590,390);
+           addObject(new Bomb(),780,420);
+           addObject(new Bomb(),760,270);
            
            alarma= new Alarm(); 
-           addObject(alarma,80,550);
+           addObject(alarma,80,530);
            
            
            addObject(doscientos,580,420);
@@ -228,6 +256,9 @@ public class BurglarWorld extends World
            addObject(quinientos,300,330);
            addObject(cien,830,50);
            addObject(veinte,790,460);
+           addObject(moneda1,440,325);
+           addObject(moneda5,310,70);
+           addObject(moneda10,790,250);
            
            Ground ground=new Ground();
            addObject(ground,220,560);
@@ -286,6 +317,31 @@ public class BurglarWorld extends World
     }
     
     /**
+     * Regresa un objeto de la clase Uno para acceder a sus métodos
+     * @return moneda1 Un objeto de la clase Uno
+     */
+    public Uno getMoneda1()
+    {
+        return moneda1;
+    }
+    /**
+     * Regresa la moneda de cinco pesos que se creo
+     * @return moneda5 Un objeto de la clase Cinco
+     */
+     public Cinco getMoneda5()
+    {
+        return moneda5;
+    }
+    /**
+     * Regresa la moneda de 10 pesos de la clase Diez
+     * @return moneda10 un objeto de la clase Diez
+     */
+    public Diez getMoneda10()
+    {
+        return moneda10;
+    }
+    
+    /**
      * Método que regresa un objeto de la clase Counter para poder ir acumulando los puntos
      * que lleve el ladron 
      * @return mensajePuntos Objeto de la clase Counter 
@@ -322,6 +378,14 @@ public class BurglarWorld extends World
         return reloj;
     }
     
+    /**
+     * Método que regresa el mensaje que se despliega en el escenario y que indica el tiempo transcurrido cuando se activa la alarma de seguridad
+     * @return contador objeto de la clase Counter
+     */
+    public Counter getContador()
+    {
+        return contador; 
+    }
    
     /**
      * Método que es llamado por el sistema de Greenfoot cuando se ha iniciado la simulación, y
@@ -346,7 +410,7 @@ public class BurglarWorld extends World
     }
     
     /**
-     * Método que checa la vidas del jugador, y si estas son igual a cero cambia el fondo, elimina 
+     * Método que checa la vidas del jugador, y si estas son igual a cero cambia el fondo se elimina 
      * todos los objetos de Burglar World y aparece un mensaje indicando que el juego termino
      */
     public void gameOver()
@@ -362,6 +426,7 @@ public class BurglarWorld extends World
            //addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2); 
              
            Greenfoot.stop();
+           
         }
     }
     
