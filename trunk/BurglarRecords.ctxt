@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BurglarRecords()
+comment0.text=\r\n\ constructor\ de\ la\ clase\ BurglarRecords.\r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Checa\ si\ se\ presiono\ la\ flecha\ de\ regresar,\ para\ mandar\ al\ jugador\ al\ men\u00FA\ principal\r\n
+numComments=2
