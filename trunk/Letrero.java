@@ -7,7 +7,7 @@ import java.awt.Color;
  * dirá que el juego ha terminado o cuando se ha ganado.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.19)
+ * @version (2014.11.25)
  */
 public class Letrero extends Actor
 {
@@ -18,20 +18,22 @@ public class Letrero extends Actor
      */
     public Letrero(String unaCadena)
     {
-        /*
-        GreenfootImage letrero;
-        letrero = new GreenfootImage("botonVerde.png");
-        
-        letrero.drawString(unaCadena,letrero.getWidth()/2, letrero.getHeight()/2);
-        Font fuente = new Font("Courier", Font.ITALIC,20); 
-        letrero.setFont(fuente);
-        letrero.setColor(Color.white);
-        letrero.setColor(java.awt.Color.white);
-        setImage(letrero);*/
+       
         GreenfootImage letrero;
         
         letrero= new GreenfootImage(unaCadena,70,java.awt.Color.white,java.awt.Color.green);
         setImage(letrero);
+    }
+    
+    /**
+     * Constructor de la clase Letrero sin parámetros que creará un letrero con
+     * el nombre del juego en el Menu
+     */
+    public Letrero()
+    {
+        GreenfootImage title;
+        title=new GreenfootImage("tituloMenu.png");
+        setImage(title);
     }
     
 }

@@ -2,4 +2,7 @@
 comment0.params=unaCadena
 comment0.target=Letrero(java.lang.String)
 comment0.text=\r\n\ constructor\ de\ la\ clase\ Letrero\ que\ tiene\ como\ parametro\ una\ cadena\ que\ se\ va\ a\ mostrar\ con\ una\ imagen\r\n\ de\ GreenfootImage\r\n\ @param\ unaCadena\ una\ cadena\ con\ el\ mensaje\ que\ se\ quiere\ mostrar\r\n
-numComments=1
+comment1.params=
+comment1.target=Letrero()
+comment1.text=\r\n\ Constructor\ de\ la\ clase\ Letrero\ sin\ par\u00E1metros\ que\ crear\u00E1\ un\ letrero\ con\r\n\ el\ nombre\ del\ juego\ en\ el\ Menu\r\n
+numComments=2
