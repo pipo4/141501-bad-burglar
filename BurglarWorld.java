@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * También incluye los métodos de acceso para algunos actores
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.23)
+ * @version (2014.11.26)
  */
 public class BurglarWorld extends World
 {
@@ -36,6 +36,7 @@ public class BurglarWorld extends World
    
     private GreenfootSound mision;
     private GreenfootSound alarmSystem;
+    private Records records;
     /**
      * Constructor de la clase BurglarWorld. Se crea el escenario y los actores del primer nivel
      * Se crean los mensajes de puntos y vidas. También se crean los sonidos del juego.
@@ -61,6 +62,7 @@ public class BurglarWorld extends World
         mision=new GreenfootSound("mision imposible.mp3");
         
         alarmSystem=new GreenfootSound("Alarma Efecto de Sonido.mp3");
+        records=new Records();
     }
 
     /**
@@ -422,7 +424,7 @@ public class BurglarWorld extends World
            setBackground(fondofinal);
            Letrero perdiste=new Letrero(" GAME OVER ");
            addObject(perdiste,this.getWidth()/2,this.getHeight()/2);
-           
+           records.guardaRecords(burglar.getPuntos());
            //addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2); 
              
            Greenfoot.stop();
@@ -442,6 +444,7 @@ public class BurglarWorld extends World
            setBackground(fondofinal);
            Letrero perdiste=new Letrero(" GANASTE ");
            addObject(perdiste,this.getWidth()/2,this.getHeight()/2);
+           records.guardaRecords(burglar.getPuntos());
            
            Greenfoot.stop();
         }

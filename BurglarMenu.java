@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *La clase BurglarMenu contiene al menu principal del juego.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.24)
+ * @version (2014.11.26)
  */
 public class BurglarMenu extends World
 {
@@ -64,6 +64,8 @@ public class BurglarMenu extends World
             
              if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == records){
                 clic.play();
+                Greenfoot.delay(40);
+                Greenfoot.setWorld(new BurglarRecords());
                 
             }
 
