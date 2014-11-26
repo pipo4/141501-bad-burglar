@@ -8,8 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BurglarMenu extends World
 {
- 
-    private Play play;
+    private GreenfootImage fondo;
+    private BotonPlay play;
+    private BotonAyuda ayuda;
+    private BotonRecords records;
     private MouseInfo info;
     private GreenfootSound clic;
     /**
@@ -20,11 +22,20 @@ public class BurglarMenu extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        play=new Play();
+
+        play=new BotonPlay();
         addObject(play,getWidth()/2,getHeight()/2);
+        ayuda=new BotonAyuda();
+        addObject(ayuda,getWidth()/2,getHeight()/2+100);
+        records=new BotonRecords();
+        addObject(records,getWidth()/2,getHeight()/2+200);
         clic=new GreenfootSound("select.wav");
+        Letrero titulo;
+        titulo=new Letrero();
+        addObject(titulo,310,90);
+
     }
-    
+
     /**
      * Invoca a los métodos del BurglarMenu
      */
@@ -32,7 +43,7 @@ public class BurglarMenu extends World
     {
         verifica();
     }
-    
+
     /**
      * El método verifica checa los botones del menú , y según sea el botón presionado hace 
      * la acción indicada
@@ -45,10 +56,19 @@ public class BurglarMenu extends World
                 Greenfoot.delay(40);
                 Greenfoot.setWorld(new BurglarWorld());
             }
-           
+            
+             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == ayuda){
+                clic.play();
+                
+            }
+            
+             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == records){
+                clic.play();
+                
+            }
+
         }
     }
-
 
     
 }
