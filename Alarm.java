@@ -10,7 +10,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Alarm extends Enemy
 {
     private GreenfootImage alarma;
-    
+    private GreenfootSound clic;
+    private FlechaAtras flecha;
+    private Records records;
     /**
      * Constructor de la clase Alarm. Crea la imagen de una alarma por medio de 
      * GreenfootImage
@@ -21,7 +23,9 @@ public class Alarm extends Enemy
         alarma.scale(alarma.getWidth()/3, alarma.getHeight()/3);
         alarma.setTransparency(50);
         setImage(alarma);
-        
+        clic=new GreenfootSound("select.wav");
+        flecha=new FlechaAtras();
+        records=new Records();
     }
     
     /**
@@ -38,8 +42,17 @@ public class Alarm extends Enemy
                 Greenfoot.delay(50);
                  Letrero perdiste=new Letrero(" GAME OVER "); 
                 ((BurglarWorld)(getWorld())).addObject(perdiste,((BurglarWorld)(getWorld())).getWidth()/2,((BurglarWorld)(getWorld())).getHeight()/2);
-     
-                Greenfoot.stop();
+                records.guardaRecords(((BurglarWorld)(getWorld())).getBurglar().getPuntos());
+                ((BurglarWorld)(getWorld())).addObject(flecha,950,550);
+                if(Greenfoot.getMouseInfo()!=null){
+           
+                    if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==flecha){
+                       clic.play();
+                       Greenfoot.setWorld(new BurglarMenu());
+                       }
+            
+                } 
+                //Greenfoot.stop();
             }
         }
         

@@ -37,6 +37,8 @@ public class BurglarWorld extends World
     private GreenfootSound mision;
     private GreenfootSound alarmSystem;
     private Records records;
+    private FlechaAtras flecha;
+    private GreenfootSound clic;
     /**
      * Constructor de la clase BurglarWorld. Se crea el escenario y los actores del primer nivel
      * Se crean los mensajes de puntos y vidas. También se crean los sonidos del juego.
@@ -58,11 +60,13 @@ public class BurglarWorld extends World
         mensajeReloj=new Counter(" Tiempo: ");
         addObject(mensajeReloj,110,56);
         contador=new Counter(" Tiempo restante ");
-        contador.setValue(10);
+        contador.setValue(15);
         mision=new GreenfootSound("mision imposible.mp3");
         
         alarmSystem=new GreenfootSound("Alarma Efecto de Sonido.mp3");
         records=new Records();
+        flecha=new FlechaAtras();
+        clic=new GreenfootSound("select.wav");
     }
 
     /**
@@ -128,7 +132,9 @@ public class BurglarWorld extends World
            reloj.mark();
            contador.add(-1);
           }
-           
+           if(contador.getValue()<=0){
+               removeObject(contador);
+            }
         }
         
        if(reloj.millisElapsed()>=1000){
@@ -209,15 +215,15 @@ public class BurglarWorld extends World
            removeObject(patrulla);
            
            
-           addObject(cincuenta,540,320);//450,300
+           addObject(cincuenta,540,370);//450,300
            addObject(veinte,700,240);
            addObject(doscientos,230,550);//230,550
            addObject(quinientos,160,130);//160,130
            addObject(moneda1,300,50);
-           addObject(moneda5,350,260);
+           addObject(moneda5,350,250);
            addObject(moneda10,125,440);
            police2=new Policeman();
-           addObject(police2,170,400);
+           addObject(police2,170,300);
            
            cien=new Cien();
            addObject(cien,780,450);//780,350
@@ -426,8 +432,9 @@ public class BurglarWorld extends World
            addObject(perdiste,this.getWidth()/2,this.getHeight()/2);
            records.guardaRecords(burglar.getPuntos());
            //addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2); 
-             
-           Greenfoot.stop();
+           addObject(flecha,950,550);
+            
+           //Greenfoot.stop();
            
         }
     }
@@ -445,8 +452,10 @@ public class BurglarWorld extends World
            Letrero perdiste=new Letrero(" GANASTE ");
            addObject(perdiste,this.getWidth()/2,this.getHeight()/2);
            records.guardaRecords(burglar.getPuntos());
+           addObject(flecha,950,550);
            
-           Greenfoot.stop();
+           
+           //Greenfoot.stop();
         }
     }
    

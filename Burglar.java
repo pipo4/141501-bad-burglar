@@ -166,13 +166,13 @@ public class Burglar extends Actor
      */
     public void cambiaDeNivel()
     {
-         if(puntos>=690 && getX()<=115 && getY()>=440 && nivel==0){  
+         if(puntos>=700 && getX()<=115 && getY()>=440 && nivel==0){  
            nivel=1;
            ((BurglarWorld)(getWorld())).cambiaNivel1();
            
         }
         
-       if(puntos>=1500 && getY()>=540 && getX()>=225 && nivel==1){
+       if(puntos>=1505 && getY()>=540 && getX()>=225 && nivel==1){
            nivel=2;
            ((BurglarWorld)(getWorld())).cambiaNivel2();
           
@@ -183,7 +183,7 @@ public class Burglar extends Actor
            
         }
         
-       if(this.isTouching(Ground.class) && getY()>=540 && puntos>2420){
+       if(this.isTouching(Ground.class) && getY()>=540 && puntos>2400){
            ((BurglarWorld)(getWorld())).ganaste();
         }
     }
