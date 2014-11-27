@@ -9,10 +9,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class FlechaAtras extends Actor
 {
     private GreenfootImage flecha;
+    private GreenfootSound clic;
     public FlechaAtras()
     {
         flecha=new GreenfootImage("flecha.png");
         flecha.scale(flecha.getWidth()/2, flecha.getHeight()/2);
         setImage(flecha);
+        clic=new GreenfootSound("select.wav");
+    }
+    
+    public void act()
+    {
+        
+            if(Greenfoot.getMouseInfo()!=null){
+           
+           if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==this){
+               clic.play();
+                Greenfoot.setWorld(new BurglarMenu());
+            }
+            
+          }   
     }
 }

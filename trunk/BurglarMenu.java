@@ -14,6 +14,7 @@ public class BurglarMenu extends World
     private BotonRecords records;
     private MouseInfo info;
     private GreenfootSound clic;
+   
     /**
      * Constructor de BurglarMenu. Crea un nuevo mundo y los botones del menú
      * 
@@ -33,7 +34,7 @@ public class BurglarMenu extends World
         Letrero titulo;
         titulo=new Letrero();
         addObject(titulo,310,90);
-
+       
     }
 
     /**
@@ -53,20 +54,20 @@ public class BurglarMenu extends World
         if(Greenfoot.getMouseInfo()!=null){ 
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == play){
                 clic.play();
-                Greenfoot.delay(40);
+                Greenfoot.delay(10);
                 Greenfoot.setWorld(new BurglarWorld());
             }
             
              if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == ayuda){
                 clic.play();
-                
+                Greenfoot.delay(10);
+                Greenfoot.setWorld(new BurglarAyuda());
             }
             
              if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == records){
                 clic.play();
-                Greenfoot.delay(40);
+                Greenfoot.delay(10);
                 Greenfoot.setWorld(new BurglarRecords());
-                
             }
 
         }

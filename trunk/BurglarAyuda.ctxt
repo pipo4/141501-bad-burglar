@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BurglarAyuda()
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ BurglarAyuda.\r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Verifica\ si\ se\ hizo\ clic\ sobre\ la\ flecha\ para\ regresar\ al\ men\u00FA\ principal\r\n
+numComments=2
