@@ -33,7 +33,7 @@ public class BurglarWorld extends World
     private static final int GIRA_90=90;
     /**Constante entera que contiene el color para dibujar el escenario en el nivel 1*/
     private static final int AZUL=0;
-   
+    private boolean aviso=false;
     private GreenfootSound mision;
     private GreenfootSound alarmSystem;
     private Records records;
@@ -60,7 +60,7 @@ public class BurglarWorld extends World
         mensajeReloj=new Counter(" Tiempo: ");
         addObject(mensajeReloj,110,56);
         contador=new Counter(" Tiempo restante ");
-        contador.setValue(15);
+        contador.setValue(20);
         mision=new GreenfootSound("mision imposible.mp3");
         
         alarmSystem=new GreenfootSound("Alarma Efecto de Sonido.mp3");
@@ -121,19 +121,20 @@ public class BurglarWorld extends World
        
        mensajePuntos.setValue(burglar.getPuntos());
        gameOver();
-       //ganaste(); 
+        
        if(burglar.getNivel()==3){
           
            alarmSystem.playLoop();
            mision.setVolume(30);
-           alarmSystem.setVolume(70);
+           alarmSystem.setVolume(50);
            addObject(contador,getWidth()/2,570);
            if(reloj.millisElapsed()>=1000){
            reloj.mark();
            contador.add(-1);
           }
-           if(contador.getValue()<=0){
+           if(contador.getValue()<=0 || aviso==true){
                removeObject(contador);
+               gameOver();
             }
         }
         
@@ -217,13 +218,13 @@ public class BurglarWorld extends World
            
            addObject(cincuenta,540,370);//450,300
            addObject(veinte,700,240);
-           addObject(doscientos,230,550);//230,550
+           addObject(doscientos,230,520);//230,550
            addObject(quinientos,160,130);//160,130
            addObject(moneda1,300,50);
            addObject(moneda5,350,250);
            addObject(moneda10,125,440);
            police2=new Policeman();
-           addObject(police2,170,300);
+           addObject(police2,170,305);
            
            cien=new Cien();
            addObject(cien,780,450);//780,350
@@ -423,7 +424,7 @@ public class BurglarWorld extends World
      */
     public void gameOver()
     {
-         if(mensajeVidas.getValue()==0){
+         if(mensajeVidas.getValue()==0 || (burglar.getPuntos()<=0 && burglar.getNivel()==3)){
            removeObjects(getObjects(Actor.class));
            GreenfootImage fondofinal = new GreenfootImage("images (17).jpg");
            fondofinal.setTransparency(220);
@@ -433,10 +434,10 @@ public class BurglarWorld extends World
            records.guardaRecords(burglar.getPuntos());
            //addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2); 
            addObject(flecha,950,550);
-            
+            aviso=true;
            //Greenfoot.stop();
-           
         }
+        
     }
     
     /**
@@ -444,7 +445,7 @@ public class BurglarWorld extends World
      */
     public void ganaste()
     {
-         if(burglar.getPuntos()>2300){
+        
            removeObjects(getObjects(Actor.class));
            GreenfootImage fondofinal = new GreenfootImage("images (17).jpg");
            fondofinal.setTransparency(220);
@@ -454,9 +455,9 @@ public class BurglarWorld extends World
            records.guardaRecords(burglar.getPuntos());
            addObject(flecha,950,550);
            
-           
+           aviso=true;
            //Greenfoot.stop();
-        }
+        
     }
    
 }
