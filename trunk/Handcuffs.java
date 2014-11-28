@@ -38,17 +38,16 @@ public class Handcuffs extends Enemy
         if(((BurglarWorld)(getWorld())).getBurglar().getNivel()==1 || ((BurglarWorld)(getWorld())).getBurglar().getNivel()==2){//1
           this.setLocation(getX(), getY()+direccion);
           
-           if(this.isAtEdge() || this.isTouching(Lines.class)){
-               esposas.setTransparency(0);
-            }
-              
-           
         }
         
        this.turn(direccion*2);
         
        
        super.quitaVida(); 
+       
+       if(this.isTouching(Lines.class) || this.isAtEdge()){
+           ((BurglarWorld)(getWorld())).removeObject(this);
+        }
     }
     
     
