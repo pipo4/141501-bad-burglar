@@ -80,7 +80,7 @@ public class Policeman extends Enemy
             if(getX()<=200){
                 this.direccion=DERECHA;
             }
-            
+            if(!isTouching(Lines.class)){
              if(getX()==720 || getX()==350 || getX()==485 || getX()==810 || getX()==550){
            esposas=new Handcuffs();
            getWorld().addObject(esposas, getX(), getY()); 
@@ -90,6 +90,7 @@ public class Policeman extends Enemy
               PepperGas gas=new PepperGas();
               getWorld().addObject(gas,getX(),getY());
             }
+        }
         }
         
         if(((BurglarWorld)(getWorld())).getBurglar().getNivel() == 2){
