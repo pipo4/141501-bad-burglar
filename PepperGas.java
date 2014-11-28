@@ -37,13 +37,14 @@ public class PepperGas extends Enemy
     public void act() 
     {
         this.setLocation(getX(), getY()+direccion);
-            
-        if(this.isAtEdge() || this.isTouching(Lines.class)){
-               gas.setTransparency(0);
-            }
+        
        this.turn(direccion-2);
        
        super.quitaVida();
+       
+       if(this.isTouching(Lines.class) || this.isAtEdge()){
+           ((BurglarWorld)(getWorld())).removeObject(this);
+        }
     }    
     
    

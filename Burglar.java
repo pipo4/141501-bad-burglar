@@ -146,6 +146,7 @@ public class Burglar extends Actor
         if(isTouching(Diez.class)){
             ((BurglarWorld)(getWorld())).getMoneda10().acumulaPuntos();
             removeTouching(Diez.class);
+           
             }
             
         if(isTouching(Cinco.class)){
@@ -158,7 +159,7 @@ public class Burglar extends Actor
             removeTouching(Uno.class);
             }
             
-           
+        
     }
     
     /**
@@ -166,13 +167,13 @@ public class Burglar extends Actor
      */
     public void cambiaDeNivel()
     {
-         if(puntos>=680 && getX()<=115 && getY()>=440 && nivel==0){  
+         if(puntos>=680 && getX()<=115 && getY()>=440 && nivel==0 && ((BurglarWorld)(getWorld())).numberOfObjects()==35){  
            nivel=1;
            ((BurglarWorld)(getWorld())).cambiaNivel1();
            
         }
         
-       if(puntos>=1490 && getY()>=520 && getX()>=225 && nivel==1){
+       if(puntos>=1490 && getY()>=520 && getX()>=225 && nivel==1 && ((BurglarWorld)(getWorld())).numberOfObjects()>=33){
            nivel=2;
            ((BurglarWorld)(getWorld())).cambiaNivel2();
           

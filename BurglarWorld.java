@@ -223,6 +223,7 @@ public class BurglarWorld extends World
            addObject(moneda1,300,50);
            addObject(moneda5,350,250);
            addObject(moneda10,125,440);
+          
            police2=new Policeman();
            addObject(police2,170,305);
            
@@ -349,6 +350,8 @@ public class BurglarWorld extends World
     {
         return moneda10;
     }
+    
+   
     
     /**
      * Método que regresa un objeto de la clase Counter para poder ir acumulando los puntos
