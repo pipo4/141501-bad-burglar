@@ -186,10 +186,12 @@ public class Burglar extends Actor
         
        if(this.isTouching(Ground.class) && getY()>=550){
            ((BurglarWorld)(getWorld())).ganaste();
+           //((BurglarWorld)(getWorld())).detenerMusica();
         }
        else{
            if(this.isTouching(Ground.class) && getY()>=540 && puntos>2480){
            ((BurglarWorld)(getWorld())).ganaste();
+            //((BurglarWorld)(getWorld())).detenerMusica();
         }
         }
     }

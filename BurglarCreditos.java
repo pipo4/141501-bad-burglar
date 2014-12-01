@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * La clase BurglarAyuda muestra la ayuda que necesita de saber el usuario para el juego.
+ * La clase BurglarCreditos muestra los créditos del juego.
  * 
  * @author (Cerda Varela Ignacio) 
- * @version (2014.11.26)
+ * @version (2014.11.30)
  */
-public class BurglarAyuda extends World
+public class BurglarCreditos extends World
 {
     private FlechaAtras flecha;
     private GreenfootSound clic;
     /**
-     * Constructor de la clase BurglarAyuda.
+     * Constructor de la clase BurglarCreditos.
      * 
      */
-    public BurglarAyuda()
+    public BurglarCreditos()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
