@@ -136,6 +136,7 @@ public class BurglarWorld extends World
                removeObject(contador);
                gameOver();
             }
+           
         }
         
        if(reloj.millisElapsed()>=1000){
@@ -438,6 +439,7 @@ public class BurglarWorld extends World
            //addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2); 
            addObject(flecha,950,550);
             aviso=true;
+            detenerMusica();
            //Greenfoot.stop();
         }
         
@@ -448,7 +450,7 @@ public class BurglarWorld extends World
      */
     public void ganaste()
     {
-        
+           alarmSystem.setVolume(0);
            removeObjects(getObjects(Actor.class));
            GreenfootImage fondofinal = new GreenfootImage("images (17).jpg");
            fondofinal.setTransparency(220);
@@ -459,8 +461,19 @@ public class BurglarWorld extends World
            addObject(flecha,950,550);
            
            aviso=true;
+           
+           detenerMusica();
            //Greenfoot.stop();
         
+    }
+    
+    /**
+     * Método que detiene la música cuando se termina el juego
+     */
+    public void detenerMusica()
+    {
+        mision.stop();
+        alarmSystem.stop();
     }
    
 }

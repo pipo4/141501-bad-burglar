@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonRecords here.
+ * La clase BotonRecords dibuja un botón, que al ser presionado mostrará los records de los jugadores.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Cerda Varela Ignacio) 
+ * @version (2014.11.30)
  */
 public class BotonRecords extends Actor
 {

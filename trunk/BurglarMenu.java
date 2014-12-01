@@ -12,6 +12,7 @@ public class BurglarMenu extends World
     private BotonPlay play;
     private BotonAyuda ayuda;
     private BotonRecords records;
+    private BotonCreditos creditos;
     private MouseInfo info;
     private GreenfootSound clic;
    
@@ -25,16 +26,18 @@ public class BurglarMenu extends World
         super(800, 600, 1); 
 
         play=new BotonPlay();
-        addObject(play,getWidth()/2,getHeight()/2);
+        addObject(play,getWidth()/2,getHeight()/2-50);
         ayuda=new BotonAyuda();
-        addObject(ayuda,getWidth()/2,getHeight()/2+100);
+        addObject(ayuda,getWidth()/2,getHeight()/2+50);
         records=new BotonRecords();
-        addObject(records,getWidth()/2,getHeight()/2+200);
+        addObject(records,getWidth()/2,getHeight()/2+150);
         clic=new GreenfootSound("select.wav");
         Letrero titulo;
         titulo=new Letrero();
         addObject(titulo,310,90);
-       
+        creditos = new BotonCreditos();
+        addObject(creditos,getWidth()/2,getHeight()/2+250);
+        
     }
 
     /**
@@ -42,6 +45,7 @@ public class BurglarMenu extends World
      */
     public void act()
     {
+        
         verifica();
     }
 
@@ -51,6 +55,7 @@ public class BurglarMenu extends World
      */
     public void verifica()
     {
+        
         if(Greenfoot.getMouseInfo()!=null){ 
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == play){
                 clic.play();
@@ -68,6 +73,13 @@ public class BurglarMenu extends World
                 clic.play();
                 Greenfoot.delay(10);
                 Greenfoot.setWorld(new BurglarRecords());
+                
+            }
+            
+             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == creditos){
+                clic.play();
+                Greenfoot.delay(10);
+                 Greenfoot.setWorld(new BurglarCreditos());
             }
 
         }

@@ -24,6 +24,7 @@ public class FlechaAtras extends Actor
             if(Greenfoot.getMouseInfo()!=null){
            
            if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==this){
+               ((BurglarWorld)(getWorld())).detenerMusica();
                clic.play();
                 Greenfoot.setWorld(new BurglarMenu());
             }

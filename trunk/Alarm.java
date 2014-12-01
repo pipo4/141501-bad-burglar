@@ -44,6 +44,7 @@ public class Alarm extends Enemy
                 ((BurglarWorld)(getWorld())).addObject(perdiste,((BurglarWorld)(getWorld())).getWidth()/2,((BurglarWorld)(getWorld())).getHeight()/2);
                 records.guardaRecords(((BurglarWorld)(getWorld())).getBurglar().getPuntos());
                 ((BurglarWorld)(getWorld())).addObject(flecha,950,550);
+                ((BurglarWorld)(getWorld())).detenerMusica();
                 if(Greenfoot.getMouseInfo()!=null){
            
                     if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==flecha){
